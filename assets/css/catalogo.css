@@ -1,0 +1,53 @@
+.services{
+    background-image: url(../images/Background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.main-text{
+    top: 10px;
+    text-align: center;    
+}
+
+.main-text p{
+    color: #ccc !important;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.main-text h2{
+    font-size: 3rem;
+    line-height: 1;
+    animation-name: transition_enfasis;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;    
+}
+
+.services-content{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,auto));
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+#campana{
+    animation-name: transition_Horizontal;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+.services button{
+    font-weight: bold;
+    transition: all .45s ease;
+    animation-name: transition_enfasis;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;    
+}
+
+.services button:Hover{
+    color: #7480d9;
+}

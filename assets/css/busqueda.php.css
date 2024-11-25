@@ -1,0 +1,38 @@
+#check{
+    color:rgb(17, 184, 17);
+}
+
+#DisponibleLetter{
+    animation-name: transition_disponible;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#responsible{
+    overflow: auto;
+}
+
+.NombreBusqueda{
+   width: 265px;
+   text-overflow: ellipsis; 
+   white-space: nowrap;
+   overflow: hidden;
+}
+
+.block a{
+    color:#7480d9 !important;
+    font-weight: bold !important;
+}
+
+#lupa{
+    animation-name: transition_Horizontal;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;    
+}
+
+#special{
+    -webkit-filter: drop-shadow(0px 0px 3px black);
+    filter: drop-shadow(0px 0px 3px black);
+}

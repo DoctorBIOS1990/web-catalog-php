@@ -1,0 +1,93 @@
+.home{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    /*background-image: url(../images/Portada.webp);*/
+    background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), url(../images/Portada.webp);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.slide{
+    margin-bottom: 20px;
+}
+
+.uno{
+    display: inline-block;
+    margin-right: 15px;
+    height: 32px;
+    padding: 0 15px;
+    line-height: 32px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 5px;
+    background: #8011e0;
+    color: #fff !important;
+}
+
+.dos{
+    display: inline-block;
+    color: #ccc !important;
+    font-size: 20px;
+    font-weight: 500;
+    padding-top:10px;
+}
+
+.home-text h1{
+    font-size: 4rem;
+    font-weight: 700;
+    color:#fff !important;
+    line-height: 1.1;
+    margin: 0 0 8px ;
+}
+
+.home-text h3{
+    font-size: 1.8rem;
+    font-weight: 700;
+    color:#fff !important;
+    line-height: 1.1;
+    margin: 0 0 35px ;
+}
+
+.home-text p{
+    font-size: 1.1rem;
+    color:#fff !important;
+    line-height: 1.8;
+    margin-bottom:30px ;
+    width: 350px;
+    text-align: justify;
+}
+
+.button{
+    Text-decoration:None !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #8011e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all .45s ease;
+    color: #fff !important;
+}
+
+.btn:hover{
+    transform: scale(0.9);
+    cursor: pointer;
+}
+
+ridut-ima
+header.sticky{
+   background:#2a2a2a;
+   border-bottom: 1px solid #ffffff1a;
+   padding: 12px 15%;
+}

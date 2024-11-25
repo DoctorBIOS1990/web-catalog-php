@@ -1,0 +1,98 @@
+/*------------------------------------------------------------------
+    TRANSITIONS 
+-------------------------------------------------------------------*/
+@keyframes transition_Vertical /* Vertical Animation*/
+{
+    0% {transform: translateY(10px);}
+    30% {transform: translateY(-10px);}
+    60% {transform: translateY(10px);}
+    80% {transform: translateY(-10px);}
+    100% {transform: translateY(10px);}
+}
+
+@keyframes transition_Horizontal /* Horizontal Animation*/
+{
+    0% {transform: translateX(5px);}
+    30% {transform: translateX(-5px);}
+    60% {transform: translateX(5px);}
+    80% {transform: translateX(-5px);}
+    100% {transform: translateX(5px);}
+}
+
+@keyframes transition_name
+{
+    0% {color: #7480d9;}
+    30% {color: #964ed5}
+    60% {color: #80a0f0;}
+    80% {color: #a0a2a4;}
+    100% {color: #7480d9;}
+}
+
+@keyframes transition_disponible
+{
+    0% {transform: scale(0.9);}
+    50% {transform: scale(1.0);}
+    100% {transform: scale(0.9);}
+}
+
+@keyframes transition_enfasis
+{
+    0% {
+        -webkit-filter: drop-shadow(0px 0px 20px #7480d9);
+        filter: drop-shadow(0px 0px 20px #7480d9);
+        }
+
+    50% {
+        -webkit-filter: drop-shadow(0px 0px 3px #5560b2);
+        filter: drop-shadow(0px 0px 3px #5560b2);
+        }
+
+    100% {
+        -webkit-filter: drop-shadow(0px 0px 20px #7480d9);
+        filter: drop-shadow(0px 0px 20px #7480d9);
+        }
+}
+
+@keyframes transition_pestañeo
+{
+    0% {background-image: url(../images/1.png);background-size: cover;}
+    50% {background: url(../images/2.png);background-size: cover;}
+    100% {background: url(../images/1.png);background-size: cover;}
+}
+
+@keyframes transition_Contact 
+{
+    0% {background: url(../images/Gallery/0.webp);}
+    20% {background: url(../images/Gallery/1.webp);}
+    40% {background: url(../images/Gallery/2.webp);}
+    60% {background: url(../images/Gallery/3.webp);}
+    80% {background: url(../images/Gallery/4.webp);}
+    100% {background: url(../images/Gallery/0.webp);}
+}
+
+/*
+@keyframes transition_Contact 
+{
+    0% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
+        linear-gradient(to bottom, rgba(0,0,0,0.11),rgba(0, 0, 0, 0), black ),url(../images/Gallery/0.webp);}
+
+    20% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
+        linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Gallery/1.webp);}
+    
+    40% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
+        linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Gallery/2.webp);}
+    
+    60% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
+        linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Gallery/3.webp);}
+    
+    80% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
+        linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Gallery/4.webp);}
+    
+    100% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
+        linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Gallery/0.webp);}
+    
+}
+*/
+
+
+

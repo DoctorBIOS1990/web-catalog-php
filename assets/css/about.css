@@ -1,0 +1,77 @@
+.about{
+    display: flex;
+    background-image: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
+    linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/about.webp);
+    background-size: cover;
+    background-position: center;
+    grid-template-columns: repeat(1fr);
+    align-items: center;
+    gap: 5rem;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+}
+
+.aboutObject{
+    display: flex;
+    background-image: linear-gradient( to top, rgba(0,0,0,0.3),rgba(0, 0, 0, 0), black ), 
+    linear-gradient(to bottom, rgba(0,0,0,0.3),rgba(0, 0, 0, 0), black ),url(../images/Background.webp);
+    background-size: cover;
+    background-position: center;
+    grid-template-columns: repeat(1fr);
+    align-items: center;
+    gap: 5rem;
+}
+
+.about-img{
+    margin: 20px, 20px;
+    max-width: 350px;
+    height: auto;
+    width: 50;
+    text-align: center;
+}
+
+.about-img img{
+    /*width: 30%;*/
+    transition: all .45s ease;
+}
+
+.about-img img:hover{
+    transform: transLateY(-8px);
+}
+
+.about-text h2{
+    font-size: 3rem;
+    line-height: 1;
+    animation-name: transition_enfasis;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.titulo{
+    font-size: 30px;
+    line-height: 1;
+}
+
+.about-text h4{
+    font-size: 24px;
+    line-height: 1.7;
+    color: #fff !important;
+    font-weight: 600;
+    margin: 15px 0 30px;
+}
+
+.about-text p {
+    color: #fff !important;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+}
+
+.pestañeo{
+    animation-name: transition_pestañeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    width: 391px;
+    height: 495px;
+}

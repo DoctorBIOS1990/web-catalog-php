@@ -1,0 +1,128 @@
+.portfolio{
+    background-image: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
+    linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,auto));
+    align-items: center;
+    gap: 1.0rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 1rem;
+}
+
+.row{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.row img{
+    width: 400px;
+    height:449px;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s;
+    margin-left: 10px;
+    margin-right: 10px;    
+}
+
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.1), #2f3ad6 );
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 25px;
+    transition: height 0.5s;
+    flex-direction: column;
+}
+
+.disponible-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,auto));
+    align-items: center;
+    gap: 1.0rem;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 1rem;
+}
+
+.CaratulaBusquedas{
+    max-width: 265px; 
+    max-height: 400px;
+}
+
+.layerDisponible{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 25px;
+    transition: height 0.5s;
+    flex-direction: column;
+}
+
+.rowDisponible{
+    position: relative;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#markDisponible{
+    padding: 5px;
+    font-weight: bold;
+    box-shadow: 5px 2px 7px black, 5px 2px 7px black,5px 5px 7px black;
+    background: black;
+    opacity:80%;
+    border-radius: 5px;
+    margin-top:0;
+    animation-name: transition_disponible;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.layer h5{
+    font-size:  12px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-shadow: 5px 2px 7px #010101, 5px 2px 7px #010101,5px 2px 7px #010101 ;
+}
+
+.layer p{
+    text-align: justify;
+    color:  #fff !important;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.2;
+    text-shadow: 5px 2px 7px #010101, 5px 2px 7px #010101,5px 2px 7px #010101 ;
+}
+
+.row:hover img{
+    transform: scale(1.1);
+    filter: grayscale();
+}
+
+.row:hover .layer{
+    height: 100%;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}

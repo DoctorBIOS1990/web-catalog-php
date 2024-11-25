@@ -1,0 +1,246 @@
+@font-face
+{
+    font-family: "MontSerrat";
+    src: url("../fonts/Montserrat-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: "MontSerrat", Tahoma;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: None !important;
+    list-style: None;
+    scroll-behavior: smooth;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    padding: 22px 15%;
+    border-bottom: 1px solid transparent;
+    transition: all .45s ease;
+}
+
+.logo{
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navlist{
+    display: flex;
+}
+
+.navlist a{
+    color: #fff !important;
+    font-size: 17px;
+    font-weight: 17px;
+    margin: 0 25px;
+    transition: all .45s ease;
+}
+
+.navlist a:hover{
+    color: #7480d9 !important;
+}
+
+#terms{
+    color: #7480d9 !important;
+    font-weight: bold;
+    transition: all .45s ease;
+}
+#terms:Hover{
+    color: #964ed5 !important ;
+}
+
+
+#menu-icon{
+    font-size:35px;
+    color: #fff !important;
+    z-index: 10001;
+    cursor: pointer;
+    margin-left: 35px;
+    font-weight: Bold;
+    transition: all .45s ease;
+    display: none;
+    margin-top: 0;
+}
+
+#menu-icon:hover{
+    color: #7480d9 !important;
+}
+
+header.sticky{
+    background: rgb(0,0,0,.6);
+    border: none;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #ffffff1a; 
+    padding: 12px 15%;
+}
+
+body{
+    background: black !important;
+    color: #fff !important;
+}
+
+span{
+    color: #7480d9;
+    font-weight: bolder;
+}
+
+.span_name{
+    font-weight: bolder;
+    color: #7480d9;
+    animation-name: transition_name;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} 
+
+section{
+    padding: 160px 15% 120px;
+}
+
+input{
+	margin:10px 10px !important;
+    text-align:center;
+    outline: none;
+    border: none !important;
+    border-radius: 20px !important;
+    width:250px;
+    height: 35px;
+    font-weight: Bold !important;
+    color:black;
+}
+
+select{
+    font-weight: Bold !important;
+    color:white;
+    outline: none;
+    background-color: #202020;
+    width:200px;
+    height: 25px;
+    text-align:center;
+    border-radius: 10px !important;
+}
+
+#advancedPanel{margin-bottom: 2rem;}
+
+#advancedPanel strong{
+    padding-right: 25px;
+
+}
+
+button{
+    background: none;
+    cursor: pointer !important;
+    width: 12px;
+    height: 35px;
+    border: #fff;
+    color: #fff;
+    font-size: 14px !important;
+}  
+
+th, td, table{
+    font-size:14px;
+    color: #fff;
+    border-spacing: 0;
+    border: 0.5px solid white;
+}
+
+th{
+    padding:8px;
+    font-weight: bolder;
+    text-align: center;
+    border: 0.5px solid white;
+    background-image: -webkit-gradient(linear, left top, left bottom, 
+    color-stop(0%,rgb(67, 112, 210)), color-stop(99%,rgb(14, 14, 14)));
+}
+
+td{
+    text-align: left;
+    padding:8px;
+}
+
+/*-- FOOTER--*/
+
+.scrollup{
+	width:40px;
+	height:40px;			
+	position:fixed;
+	bottom:40px;
+	right:8px;
+    font-size: 36px;
+    color:white !important;
+    display:none;	
+    transition: all .45s ease;
+    -webkit-filter: drop-shadow(0px 0px 3px black);
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+.scrollup:hover{
+    cursor:pointer;
+}
+
+.block a{
+    font-size: 12px;
+}
+
+.GoBack{
+	width:40px;
+	height:40px;			
+	position:fixed;
+	bottom:40px;
+	right:8px;
+	display:none;			
+    display: block;
+    font-size: 36px;
+    color:white;
+    transition: all .45s ease;
+    -webkit-filter: drop-shadow(0px 0px 3px black);
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+.GoBack:hover{
+    cursor:pointer;
+}
+
+.contador{
+    position:fixed;
+    padding:8px;
+    border-radius:10px 0 0 10px;
+    bottom:0;
+    margin-bottom: 0;
+    right:0;
+    background:#202020;			
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    opacity:80%;
+    color:white;
+    border: white 2px solid;
+    transition: all .45s ease;
+    -webkit-filter: drop-shadow(0px 0px 3px black);
+    filter: drop-shadow(0px 0px 3px black);
+}
+
+.end{
+    padding: 20px 15%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-image: -webkit-gradient(linear, left top, left bottom, 
+    color-stop(0%,rgba(43, 48, 53)), color-stop(99%,rgb(14, 14, 14)));
+}
+
