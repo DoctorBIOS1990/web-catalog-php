@@ -6,6 +6,17 @@ The founder of the business is the main worker, he updates the databases, local 
 He lacks the staff to dedicate himself to work on the databases in the cloud, and the possibility of hiring them.
 I removed records from the databases to reduce the size and make it easier on GitHub.
 
+
+<div align="center">
+  <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/1.jpeg" width="150"/> 
+  <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/2.jpeg" width="150"/> 
+  <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/3.jpeg" width="150"/> 
+  <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/4.jpeg" width="150"/> 
+  <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/5.jpeg" width="150"/> 
+  <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/6.jpeg" width="150"/> 
+  
+</div>
+  
 <h3>:briefcase: Business Model</h3>
 <img src="https://github.com/DoctorBIOS1990/digital-catalogs-for-windows/blob/main/Imperio/Business%20Model.jpg">
 
