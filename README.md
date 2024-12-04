@@ -15,6 +15,7 @@ I removed records from the databases to reduce the size and make it easier on Gi
   <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/5.jpeg" width="150"/> 
   <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/6.jpeg" width="150"/> 
   <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/7.jpeg" width="150"/> 
+  <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/10.jpeg" width="150"/> 
 </div>
   
 <h3>:briefcase: Business Model</h3>
