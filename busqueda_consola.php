@@ -67,7 +67,6 @@
 		<?php if ($_POST) foreach($sentencia as $busqueda){ ?>
 			<div class="rowDisponible"> 
 			<center>    
-				<a href="info_game.php?id=<?php echo $busqueda->id ?>">
 					<img class="CaratulaBusquedas" style="width: 335px; height: 470px; border: solid 3px #a6a5a5;border-radius: 10px;" src="data:image/jpeg;base64,<?php echo base64_encode($busqueda->caratula) ?>" />
 					<?php if ($busqueda->disponible){ ?>
 						<div class="layerDisponible">
@@ -78,7 +77,6 @@
 								?></h4>
 						</div>
 					<?php }?>
-				</a>
 				<p class="NombreBusqueda"><strong><?php echo $busqueda->nombre ?> </br> 
 					[ <i class="fa fa-download" style="color:rgb(255,199,0);" ></i> <?php echo $busqueda->tamanio ?> ] </strong>
 					[ <i class="fa fa-gamepad"></i> <?php echo $busqueda->plataforma ?> ] </strong>
