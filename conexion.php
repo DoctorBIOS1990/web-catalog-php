@@ -7,12 +7,27 @@
 	$baseAnime = new PDO("sqlite:" . __DIR__ . "/assets/bd_anime.db");
 	$baseAnime->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+	$baseConsola = new PDO("sqlite:" . __DIR__ . "/assets/bd_consolas.db");
+	$baseConsola->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 	function criterio(){ // Evaluate search
-		if ($_POST){
-			if ($_POST["nombre"] != "" ){
+		switch(true){
+			case isset($_POST["nombre"]):
 				return $_POST['nombre'];
-			}else return $_POST['genero'];
-		}else return 'No existe';
+				break;
+
+			case isset($_POST["genero"]):
+				return $_POST['genero'];
+				break;
+				
+			case isset($_POST["plataforma"]):
+				return $_POST['plataforma'];
+				break;	
+
+			default:
+				return "No existe.";
+				break;
+		}
 	}
 
 ?>

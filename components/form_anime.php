@@ -1,6 +1,6 @@
 <?php 
     $generos = array(
-    'Accion', 'Animacion', 'Apocaliptico', 'Artes marciales', 'Aventura','Cartas',
+    '-- Listar todas --','Accion', 'Animacion', 'Apocaliptico', 'Artes marciales', 'Aventura','Cartas',
     'Ciencia Ficcion','Cocina','Comedia','Cyberpunk','Deporte','Detective','Distopia',
     'Drama','Ecchi','Escolar','Espionaje','Fantasia','Filosofico','Futbol','Gore','Harem',
     'Historia alternativa','Historico','Horror','Isekai','Josei','Kemono','Magia',

@@ -1,6 +1,6 @@
 <?php 
     $generos = array(
-    '1ra Persona', '3ra Persona', 'Accion', 'Anime', 'Arcade','Aventura', 'Beisbol', 'Belico','Buceo','Carreras',
+    '-- Listar todas --','1ra Persona', '3ra Persona', 'Accion', 'Anime', 'Arcade','Aventura', 'Beisbol', 'Belico','Buceo','Carreras',
     'Cartas','Conduccion','Cooperativo','Deporte','Disney','Espionaje','Estrategia','Fantasia','Ficcion','Futbol',
     'Hack and Slash','Horror','Indie','Manga','Mechas','Misterio','Moto','Mundo abierto','P. Isometrica','Pelea',
     'Pesca','Plataforma','Policia','Puzzle','Robots','Rol','RPG','Run and gun','Shooter','Simulacion','Simulador',

@@ -68,10 +68,9 @@
                 prestigio por el buen trato al cliente a la hora de compra, soporte técnico con su PC, 
                 y la automatización de los servicios para los clientes.
             </br>
-            <a id="terms" href="terms.php"><i class="fa fa-bullhorn" ></i> Nuestra Pólitica de trabajo.</a></br></br>
+            <a id="terms" href="terms.php"><i class="fa fa-bullhorn" ></i> Nuestra Política de trabajo.</a></br></br>
             <i class="fa fa-thumb-tack"></i> Atentamente, su servidor:<strong>     <i class="fa fa-user"></i>  Juan Pablo.</strong>
-
-            
+           
         </p>       
             
         </div>
@@ -94,6 +93,31 @@
                 <a href="busqueda_animes.php">
                     <button style="width:150px;"><i class="fa fa-puzzle-piece"></i> Otros servicios... </button>
                 </a>
+
+                <div class="detalles-content">
+                <p><center>
+                <div id="responsible">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="padding:5px;">
+                                    <center><i class="fa fa-puzzle-piece"></i> Otros servicios que ofertamos</center>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding:10px;"><a style="color:#fff;" href="busqueda_animes.php"><i class="fa fa-video-camera"></i> Animes.</a></td>
+                                <td style="padding:10px;"><a style="color:#fff;" href="busqueda_consola.php"><i class="fa fa-gamepad"></i> Juegos de Consola.</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </center></p>
+            </div>
+
+
             </center>
         </div>
         <div class="main-text">

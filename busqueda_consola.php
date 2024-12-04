@@ -2,21 +2,17 @@
 	include_once __DIR__ . "/conexion.php";
 
 	$contador = 0;
-	$consulta = new Consulta($baseDeDatos, 'PC');
+	$consulta = new Consulta($baseConsola, 'consolas');
 
 	if ($_POST){
 		
 		if (isset($_POST['nombre'])){
-			$sentencia = $consulta->myQuery("SELECT * FROM PC WHERE nombre LIKE ?", "nombre");
+			$sentencia = $consulta->myQuery("SELECT * FROM consolas WHERE nombre LIKE ?", "nombre");
 			$contador = count($sentencia);
 		}
 
-		if (isset($_POST['genero'])){
-			if ($_POST['genero'] == '-- Listar todas --'){
-				$sentencia = $consulta->fetchAllRecords("SELECT * FROM PC");
-			}else{
-				$sentencia = $consulta->myQuery("SELECT * FROM PC WHERE genero LIKE ?", "genero");
-			}
+		if (isset($_POST['plataforma'])){
+			$sentencia = $consulta->myQuery("SELECT * FROM consolas WHERE plataforma LIKE ?", "plataforma");
 			$contador = count($sentencia);
 		}
 
@@ -41,7 +37,7 @@
 	<title>Búsqueda - <?php echo criterio(); ?></title>
 	<style>
 		.ultimos{
-			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(../assets/images/BackGames.webp);
+			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(../assets/images/BackConsoles.webp);
 		}
 	</style>
 </head>
@@ -52,7 +48,7 @@
 
 <section class="ultimos" id="ultimos">
 	<div class="main-text">
-		<h2><i id="lupa" class="fa fa-search"></i><span id="special" class="span_name"> Juegos PC</span>.</h2>
+		<h2><i id="lupa" class="fa fa-search"></i><span id="special" class="span_name"> Consolas</span>.</h2>
 		<h3><strong> Resultados encontrados</strong>, </br>puede escribir parcialmente el nombre.</h3>
 		<h3><i class="fa fa-edit"></i> Criterio de búsqueda: <span><?php echo criterio(); ?></span>
 		</h3>
@@ -61,7 +57,7 @@
 	<center>
 		<div class="services-content">
 			<!--Search Form-->
-			<?php include __DIR__ . "/components/form_game.php";?>
+			<?php include __DIR__ . "/components/form_consola.php";?>
 		</div>
 	</center>
 </section>
@@ -85,6 +81,7 @@
 				</a>
 				<p class="NombreBusqueda"><strong><?php echo $busqueda->nombre ?> </br> 
 					[ <i class="fa fa-download" style="color:rgb(255,199,0);" ></i> <?php echo $busqueda->tamanio ?> ] </strong>
+					[ <i class="fa fa-gamepad"></i> <?php echo $busqueda->plataforma ?> ] </strong>
 					<?php if ($busqueda->recomendado) {echo '- <i id="DisponibleLetter" style="color:yellow; " class="fa fa-star"></i><strong> Recomendado </strong>';} ?>
 				</p>
 			</center>

@@ -14,9 +14,12 @@
 		}
 
 		if (isset($_POST['genero'])){
-			$animes = $consultaAnime->myQuery("SELECT * FROM ANIMES WHERE ani_genero LIKE ?", "genero");
+			if ($_POST['genero'] == '-- Listar todas --'){
+				$animes = $consultaAnime->fetchAllRecords("SELECT * FROM ANIMES");
+			}else{
+				$animes = $consultaAnime->myQuery("SELECT * FROM ANIMES WHERE ani_genero LIKE ?", "genero");
+			}
 			$contador = count($animes);
-			$_POST["nombre"] = "";
 		}
 
 		if ($animes == false){
@@ -53,7 +56,7 @@
 
 <section class="ultimos" id="ultimos" style="padding-bottom:0;">
 	<div class="main-text">
-		<h2><i id="lupa" class="fa fa-search"></i><span id="special"> Animes</span>.</h2>
+		<h2><i id="lupa" class="fa fa-search"></i><span id="special" class="span_name"> Animes</span>.</h2>
 		<h3><strong> Puede escribir parcialmente el nombre.</strong></h3>
 		<h3><i class="fa fa-edit"></i> Criterio de búsqueda: <span><?php echo criterio(); ?></span>
 		</h3>
@@ -148,6 +151,7 @@
 				</div>
 			<?php }?>
 	</div>
+
 </section>
 
 <?php if($contador)  { ?>
