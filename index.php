@@ -90,10 +90,6 @@
 			<!--Search Form-->
 			<?php include __DIR__ . "/components/form_game.php";?>
             <center>
-                <a href="busqueda_animes.php">
-                    <button style="width:150px;"><i class="fa fa-puzzle-piece"></i> Otros servicios... </button>
-                </a>
-
                 <div class="detalles-content">
                 <p><center>
                 <div id="responsible">
