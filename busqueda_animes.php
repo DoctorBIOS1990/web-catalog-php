@@ -5,7 +5,8 @@
 	$consultaAnime = new Consulta($baseAnime, 'ANIMES');
 	$recomendados = $consultaAnime->getAllRecords("SELECT * FROM ANIMES WHERE recomendado NOTNULL and ani_id > :id 
 							   		Order by ani_id LIMIT 8;");
-							   
+	$animes;
+
 	if ($_POST) {
 		
 		if (isset($_POST['nombre'])){
@@ -20,11 +21,6 @@
 				$animes = $consultaAnime->myQuery("SELECT * FROM ANIMES WHERE ani_genero LIKE ?", "genero");
 			}
 			$contador = count($animes);
-		}
-
-		if ($animes == false){
-			header("location:error.php");
-			exit;
 		}
 	}
 
@@ -45,7 +41,10 @@
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<title>Búsqueda - <?php echo criterio(); ?></title>
 	<style>
-		.ultimos{background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(../assets/images/BackAnimes.webp);}
+		.ultimos{
+			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(../assets/images/BackAnimes.webp);
+			padding-bottom: 0;
+		}
 	</style>
 
 </head>
@@ -99,9 +98,12 @@
 			</div>
 		<?php }?>
 	</div>
-	<?php if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
-	<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 
-	?>	
+	<?php 
+		if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
+		<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 
+		else if ($animes == false) echo '<style>#sectionSearch{background:none;}</style>
+		<div class="main-text"><h3 style="text-align:center;">"No se encuentra."</h3></div>'; 
+	?>
 </section>
 
 <!---Recomendados Animes Section-->

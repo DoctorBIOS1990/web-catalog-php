@@ -3,6 +3,7 @@
 
 	$contador = 0;
 	$consulta = new Consulta($baseDeDatos, 'PC');
+	$sentencia;	
 
 	if ($_POST){
 		
@@ -18,11 +19,6 @@
 				$sentencia = $consulta->myQuery("SELECT * FROM PC WHERE genero LIKE ?", "genero");
 			}
 			$contador = count($sentencia);
-		}
-
-		if ($sentencia == false){
-			header("location:error.php");
-			exit;
 		}
 	}
 ?>
@@ -42,6 +38,7 @@
 	<style>
 		.ultimos{
 			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(../assets/images/BackGames.webp);
+			padding-bottom: 0;
 		}
 	</style>
 </head>
@@ -53,7 +50,7 @@
 <section class="ultimos" id="ultimos">
 	<div class="main-text">
 		<h2><i id="lupa" class="fa fa-search"></i><span id="special" class="span_name"> Juegos PC</span>.</h2>
-		<h3><strong> Resultados encontrados</strong>, </br>puede escribir parcialmente el nombre.</h3>
+		<h3><strong>Puede escribir parcialmente el nombre.</strong></h3>
 		<h3><i class="fa fa-edit"></i> Criterio de búsqueda: <span><?php echo criterio(); ?></span>
 		</h3>
 	</div>
@@ -92,10 +89,12 @@
 			
 		<?php }?>
 	</div>
-	<?php if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
-	<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 
+	<?php 
+		if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
+		<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 
+		else if ($sentencia == false) echo '<style>#sectionSearch{background:none;}</style>
+		<div class="main-text"><h3 style="text-align:center;">"No se encuentra."</h3></div>'; 
 	?>
-
 </section>
 
 <?php if($contador)  { ?>

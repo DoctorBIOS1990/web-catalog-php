@@ -3,6 +3,7 @@
 
 	$contador = 0;
 	$consulta = new Consulta($baseConsola, 'consolas');
+	$sentencia;
 
 	if ($_POST){
 		
@@ -14,11 +15,6 @@
 		if (isset($_POST['plataforma'])){
 			$sentencia = $consulta->myQuery("SELECT * FROM consolas WHERE plataforma LIKE ?", "plataforma");
 			$contador = count($sentencia);
-		}
-
-		if ($sentencia == false){
-			header("location:error.php");
-			exit;
 		}
 	}
 ?>
@@ -38,6 +34,7 @@
 	<style>
 		.ultimos{
 			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(../assets/images/BackConsoles.webp);
+			padding-bottom: 0;
 		}
 	</style>
 </head>
@@ -49,7 +46,7 @@
 <section class="ultimos" id="ultimos">
 	<div class="main-text">
 		<h2><i id="lupa" class="fa fa-search"></i><span id="special" class="span_name"> Consolas</span>.</h2>
-		<h3><strong> Resultados encontrados</strong>, </br>puede escribir parcialmente el nombre.</h3>
+		<h3><strong>Puede escribir parcialmente el nombre.</strong></h3>
 		<h3><i class="fa fa-edit"></i> Criterio de búsqueda: <span><?php echo criterio(); ?></span>
 		</h3>
 	</div>
@@ -80,15 +77,17 @@
 				<p class="NombreBusqueda"><strong><?php echo $busqueda->nombre ?> </br> 
 					[ <i class="fa fa-download" style="color:rgb(255,199,0);" ></i> <?php echo $busqueda->tamanio ?> ] </strong>
 					[ <i class="fa fa-gamepad"></i> <?php echo $busqueda->plataforma ?> ] </strong>
-					<?php if ($busqueda->recomendado) {echo '- <i id="DisponibleLetter" style="color:yellow; " class="fa fa-star"></i><strong> Recomendado </strong>';} ?>
 				</p>
 			</center>
 			</div>
 			
 		<?php }?>
 	</div>
-	<?php if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
-	<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 
+	<?php 
+		if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
+		<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 
+		else if ($sentencia == false) echo '<style>#sectionSearch{background:none;}</style>
+		<div class="main-text"><h3 style="text-align:center;">"No se encuentra."</h3></div>'; 
 	?>
 
 </section>

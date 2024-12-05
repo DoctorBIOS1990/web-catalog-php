@@ -63,7 +63,8 @@
         <div class="about-text">
             <h2><span>De</span>Nosotros<span>.</span></h2>
             <h4>Siempre pensando en el cliente. </h4>
-            <p> <I>Hola</I> <i class="fa fa-hand-stop-o"></i>, <strong> Imperio Gamers</strong> tiene alrededor de 5 años en el negocio de los videojuegos.
+            <p> <I>Hola</I> <i class="fa fa-hand-stop-o"></i>, <strong> Imperio Gamers</strong> tiene 
+                alrededor de 5 años en el negocio de los videojuegos y el entretenimiento.
                 Acumulando un historial de agrado de distintas partes de Santiago de Cuba y ganando 
                 prestigio por el buen trato al cliente a la hora de compra, soporte técnico con su PC, 
                 y la automatización de los servicios para los clientes.
