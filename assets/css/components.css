@@ -168,6 +168,14 @@ th{
     color-stop(0%,rgb(67, 112, 210)), color-stop(99%,rgb(14, 14, 14)));
 }
 
+#prioridad{
+    animation-name: transition_prioridad;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transition: all .45s ease;
+}
+
 td{
     text-align: left;
     padding:8px;
@@ -244,3 +252,60 @@ td{
     color-stop(0%,rgba(43, 48, 53)), color-stop(99%,rgb(14, 14, 14)));
 }
 
+/* MARQUEE */
+marquee {
+    position: relative; 
+    padding: 10px; 
+}
+
+marquee::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%; 
+    height: 100%;
+    background: linear-gradient(to left, transparent, black); 
+    z-index: 1;
+}
+
+marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10%; 
+    height: 100%;
+    background: linear-gradient(to right, transparent, black); 
+}
+
+.imgMarquee {
+    max-width: 100%;
+}
+
+.bar{
+    position:fixed;
+    width:100%;
+    justify-content: center;
+    align-items:center;
+    padding:10px;
+    bottom:0;
+    margin-bottom: 0;
+    right:0;
+    background:#202020;			
+    display: flex;
+    font-size: 36px;
+    border: white 2px solid;
+    transition: all .45s ease;
+    -webkit-filter: drop-shadow(0px 0px 3px black);
+    filter: drop-shadow(0px 0px 3px black);
+    background: rgb(0,0,0,.3);
+    border: none;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid #ffffff1a; 
+}
+
+.bar a{
+    color:white !important;
+}

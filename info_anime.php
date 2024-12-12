@@ -25,7 +25,10 @@
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <title>Anime - <?php echo $anime->ani_nombre?></title>
     <style>
-		.about{background-image: linear-gradient(rgba(0,0,0,0.1), black ),url(../assets/images/BackAnimes.webp);}
+		.about{
+            background-image: linear-gradient(rgba(0,0,0,0.1), black ),url(../assets/images/BackAnimes.webp);
+            align-items: normal;
+        }
 		.aboutObject{background-image: linear-gradient(to top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0), black ),url(../assets/images/Background.jpg);}        
 	</style>
 </head>
@@ -33,18 +36,7 @@
 <body>
 
     <!-- Navigation -->
-    <header class="sticky">
-        <a href="#" class="logo"><img width="12" src="assets/images/casco.png" alt="Logo"> Imperio<span class="span_name">GAMERS</span></a>
-        <ul class="navlist">
-            <li><a href="/"><i class="fa fa-home fa-fw"></i> Inicio</a></li>
-            <li><a target="_blank" onclick="alertGame();" href="https://www.animeslatino.club/recherche?q=<?php echo str_replace(" ", "+",$anime->ani_nombre);?>"><i class="fa fa-search fa-fw"></i> AnimesLatinos</a></li>
-            <li><a target="_blank" onclick="alertGame();" href="https://animedescargas.com/?s=<?php echo str_replace(" ", "+",$anime->ani_nombre). '&asl_active=1&p_asl_data=1&categoryset[]=8&categoryset[]=31&categoryset[]=32&categoryset[]=1&customset[]=post&asl_gen[]=excerpt&asl_gen[]=content&asl_gen[]=title&qtranslate_lang=0&filters_initial=1&filters_changed=0' ;?>"><i class="fa fa-search fa-fw"></i> AnimeDescargas</a></li>
-            <li><a target="_blank" onclick="alertGame();" href="https://www.google.com/search?q=Capturas+Juego+'<?php echo str_replace(" ", "+",$anime->ani_nombre).' PC+Game&sa=X&sca_esv=63099308d1ada3ea&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgOGjTvRc9yFTaqV7WRdEZ5vrNCA3fjceDVxXTWs65gbgLeHpNqbEFY3HCfKsdJhnlUqy6J_VQgRbrDFeCKOFXy1EfpJySOxycAVvglFW3XgVnbAO4P3GC6K4q_tusskTx6UJLvlUuevDty122IWai3DySPD19FhEbU3MvupQHvkpYvbOU&ved=2ahUKEwjeg8jUwqeJAxU_TDABHVjTENMQtKgLegQIARAH&biw=1358&bih=628&dpr=1' ;?>"><i class="fa fa-google fa-fw"></i> Capturas</a></li>
-            <li><a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$anime->ani_nombre).'+Opening+Temporada+'.''.$anime->ani_temporada ;?>"><i class="fa fa-youtube-play fa-fw"></i> Opening</a></li>
-            <li><a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$anime->ani_nombre).'+Trailer' ;?>"><i class="fa fa-youtube-play fa-fw"></i> Trailer</a></li>
-        </ul>
-        <p class='menu-icon' id="menu-icon">≡</p>
-    </header>
+    <?php include __DIR__ . "/components/header.php";?>
     
     <!---About this game Section-->
     <section class="about" id="about" style="padding-bottom:0;">
@@ -54,7 +46,7 @@
     </center>
            <div class="about-text">
 
-           <center><h2><span id="special"><?php echo $anime->ani_nombre?></span></h2></center>
+           <center><h2><span id="special" class="span_name"><?php echo $anime->ani_nombre?></span></h2></center>
            <center><h4 id="DisponibleLetter"><?php if ($anime->disponible){ 
                             echo '<i id="check" class="fa fa-check-circle"></i>';
                             echo " ¡Ya Disponible!";
@@ -124,10 +116,17 @@
         </div>
     </section>
 
-<a onclick="window.history.back();" class="GoBack"><i class="fa fa-chevron-circle-left"></i></a>
+<p class="bar" style="font-size:24px"></i> 
+	<a style="bottom:40px;" onclick="window.history.back();"><i class="fa fa-chevron-circle-left"></i></a>    
 
-<!---End Section-->
-<?php include __DIR__ . "/components/footer.php";?>
+    <a target="_blank" onclick="alertGame();" href="https://www.animeslatino.club/recherche?q=<?php echo str_replace(" ", "+",$anime->ani_nombre);?>"><i class="fa fa-cloud-download fa-fw"></i></a>
+    <a target="_blank" onclick="alertGame();" href="https://animedescargas.com/?s=<?php echo str_replace(" ", "+",$anime->ani_nombre). '&asl_active=1&p_asl_data=1&categoryset[]=8&categoryset[]=31&categoryset[]=32&categoryset[]=1&customset[]=post&asl_gen[]=excerpt&asl_gen[]=content&asl_gen[]=title&qtranslate_lang=0&filters_initial=1&filters_changed=0' ;?>"><i class="fa fa-cloud-download fa-fw"></i></a>
+    <a target="_blank" onclick="alertGame();" href="https://www.google.com/search?q=Capturas+Juego+'<?php echo str_replace(" ", "+",$anime->ani_nombre).' PC+Game&sa=X&sca_esv=63099308d1ada3ea&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgOGjTvRc9yFTaqV7WRdEZ5vrNCA3fjceDVxXTWs65gbgLeHpNqbEFY3HCfKsdJhnlUqy6J_VQgRbrDFeCKOFXy1EfpJySOxycAVvglFW3XgVnbAO4P3GC6K4q_tusskTx6UJLvlUuevDty122IWai3DySPD19FhEbU3MvupQHvkpYvbOU&ved=2ahUKEwjeg8jUwqeJAxU_TDABHVjTENMQtKgLegQIARAH&biw=1358&bih=628&dpr=1' ;?>"><i class="fa fa-camera fa-fw"></i></a>
+    <a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$anime->ani_nombre).'+Opening+Temporada+'.''.$anime->ani_temporada ;?>"><i class="fa fa-play fa-fw"></i></a>
+    <a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$anime->ani_nombre).'+Trailer' ;?>"><i class="fa fa-play-circle fa-fw"></i></a>
+
+    <a style="bottom:80px;" href="#"><i class="fa fa-chevron-circle-up"></i></a>
+</p>
 
 </body>
     <script type="text/javascript" src="./assets/js/script.js"></script>

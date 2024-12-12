@@ -26,26 +26,18 @@
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <title>Info - <?php echo $videojuego->nombre?></title>
     <style>
-		.about{background-image: linear-gradient(rgba(0,0,0,0.1), black ),url(../assets/images/BackGames.webp);}
+		.about{
+            background-image: linear-gradient(rgba(0,0,0,0.1), black ),url(../assets/images/BackGames.webp);
+            align-items: normal;
+        }
         .aboutObject{background-image: linear-gradient(to top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0), black ),url(../assets/images/Background.jpg);}
 	</style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <header class="sticky">
-        <a href="#" class="logo"><img width="12" src="assets/images/casco.png" alt="Logo"> Imperio<span class="span_name">GAMERS</span></a>
-        <ul class="navlist">
-            <li><a href="/"><i class="fa fa-home fa-fw"></i> Inicio</a></li>
-            <li><a target="_blank" onclick="alertGame();" href="https://www.zona-leros.com/search?q=<?php echo str_replace(" ", "+",$videojuego->nombre);?>"><i class="fa fa-search fa-fw"></i> Zona-Leros</a></li>
-            <li><a target="_blank" onclick="alertGame();" href="https://compu-pc.com/?s=<?php echo str_replace(" ", "-",$videojuego->nombre);?>"><i class="fa fa-search fa-fw"></i> Compu-PC</a></li>
-            <li><a target="_blank" onclick="alertGame();" href="https://www.google.com/search?q=Capturas+Juego+'<?php echo str_replace(" ", "+",$videojuego->nombre).' PC+Game&sa=X&sca_esv=63099308d1ada3ea&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgOGjTvRc9yFTaqV7WRdEZ5vrNCA3fjceDVxXTWs65gbgLeHpNqbEFY3HCfKsdJhnlUqy6J_VQgRbrDFeCKOFXy1EfpJySOxycAVvglFW3XgVnbAO4P3GC6K4q_tusskTx6UJLvlUuevDty122IWai3DySPD19FhEbU3MvupQHvkpYvbOU&ved=2ahUKEwjeg8jUwqeJAxU_TDABHVjTENMQtKgLegQIARAH&biw=1358&bih=628&dpr=1' ;?>"><i class="fa fa-google fa-fw"></i> Capturas</a></li>
-            <li><a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$videojuego->nombre).'+Game+Play' ;?>"><i class="fa fa-youtube-play fa-fw"></i> GamePLay</a></li>
-            <li><a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$videojuego->nombre).'+Trailer' ;?>"><i class="fa fa-youtube-play fa-fw"></i> Trailer</a></li>
-        </ul>
-        <p class='menu-icon' id="menu-icon">≡</p>
-    </header>
-    
+    <!---Navigator-->
+    <?php include __DIR__ . "/components/header.php";?>
+     
     <!---About this game Section-->
     <section class="about" id="about" style="padding-bottom:0;">
     <center>
@@ -53,8 +45,8 @@
     </center>
            <div class="about-text">
 
-           <center><h2><span id="special"><?php echo $videojuego->nombre?></span></h2>
-           <h4 id="DisponibleLetter"><?php if ($videojuego->disponible){ 
+           <center ><h2><span id="special" class="span_name"><?php echo $videojuego->nombre?></span></h2>
+           <h4 id="DisponibleLetter" style="margin-bottom:0;" ><?php if ($videojuego->disponible){ 
                             echo '<i id="check" class="fa fa-check-circle"></i>';
                             echo " ¡Ya Disponible!";
                             }
@@ -135,11 +127,15 @@
             </div>
     </section>
 
-
-<a onclick="window.history.back();" class="GoBack"><i class="fa fa-chevron-circle-left"></i></a>
-
-<!---End Section-->
-<?php include __DIR__ . "/components/footer.php";?>
+<p class="bar" style="font-size:24px"></i> 
+	<a style="bottom:40px;" onclick="window.history.back();"><i class="fa fa-chevron-circle-left"></i></a>    
+    <a target="_blank" onclick="alertGame();" href="https://www.zona-leros.com/search?q=<?php echo str_replace(" ", "+",$videojuego->nombre);?>"><i class="fa fa-cloud-download fa-fw"></i></a>
+    <a target="_blank" onclick="alertGame();" href="https://compu-pc.com/?s=<?php echo str_replace(" ", "-",$videojuego->nombre);?>"><i class="fa fa-cloud-download fa-fw"></i></a>
+    <a target="_blank" onclick="alertGame();" href="https://www.google.com/search?q=Capturas+Juego+'<?php echo str_replace(" ", "+",$videojuego->nombre).' PC+Game&sa=X&sca_esv=63099308d1ada3ea&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgOGjTvRc9yFTaqV7WRdEZ5vrNCA3fjceDVxXTWs65gbgLeHpNqbEFY3HCfKsdJhnlUqy6J_VQgRbrDFeCKOFXy1EfpJySOxycAVvglFW3XgVnbAO4P3GC6K4q_tusskTx6UJLvlUuevDty122IWai3DySPD19FhEbU3MvupQHvkpYvbOU&ved=2ahUKEwjeg8jUwqeJAxU_TDABHVjTENMQtKgLegQIARAH&biw=1358&bih=628&dpr=1' ;?>"><i class="fa fa-camera fa-fw"></i></a>
+    <a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$videojuego->nombre).'+Game+Play' ;?>"><i class="fa fa-play fa-fw"></i></a>
+    <a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$videojuego->nombre).'+Trailer' ;?>"><i class="fa fa-play-circle fa-fw"></i></a>
+    <a style="bottom:80px;" href="#"><i class="fa fa-chevron-circle-up"></i></a>
+</p>
 
 </body>
     <script type="text/javascript" src="./assets/js/script.js"></script>

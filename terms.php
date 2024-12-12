@@ -46,15 +46,14 @@
                 4 - Si el juego funciona bien, queda claro que el problema está en la PC del cliente. </br>
                 5 - No se hace devolución de dinero.
 
-                <h4><i class="fa fa-bullhorn" ></i> Formas de pago: </h4>
-
+                <h4><i class="fa fa-shopping-cart" ></i> Formas de pago: </h4>
                 <center>
                 <table class="test-center">
                     <tbody>
                         <tr>
-                            <th><p style="font-size:36px"><i class="fa fa-money"></i></p> Dinero efectivo.</th>
-                            <td><p style="font-size:36px"><i class="fa fa-credit-card"></i></p> Transferencia Targeta CUP, MLC.</td>
-                            <td><p style="font-size:36px"><i class="fa fa-mobile"></i></p> Saldo móvil.</td>
+                            <th id="prioridad"><p style="font-size:36px;"><i class="fa fa-money"></i></p> Prioridad Dinero efectivo.</th>
+                            <td><p style="font-size:36px;"><i class="fa fa-credit-card"></i></p>Transferencia CUP, MLC.</td>
+                            <td><p style="font-size:36px;"><i class="fa fa-mobile"></i></p> Saldo SIM de móvil.</td>
                         </tr>
                     </tbody>
                 </table>

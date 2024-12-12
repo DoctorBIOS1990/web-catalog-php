@@ -70,29 +70,20 @@
     100% {background: url(../images/Gallery/0.webp);}
 }
 
-/*
-@keyframes transition_Contact 
+
+@keyframes transition_prioridad 
 {
-    0% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
-        linear-gradient(to bottom, rgba(0,0,0,0.11),rgba(0, 0, 0, 0), black ),url(../images/Gallery/0.webp);}
-
-    20% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
-        linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Gallery/1.webp);}
+    0% 
+       {
+            background-image: -webkit-gradient(linear, left top, left bottom, 
+            color-stop(0%,rgb(67, 112, 210)), color-stop(99%,rgb(14, 14, 14)));        
+       }
+       
+    50% {background: none;}
     
-    40% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
-        linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Gallery/2.webp);}
-    
-    60% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
-        linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Gallery/3.webp);}
-    
-    80% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
-        linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Gallery/4.webp);}
-    
-    100% {background: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
-        linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Gallery/0.webp);}
-    
+    100% 
+        {
+            background-image: -webkit-gradient(linear, left top, left bottom, 
+            color-stop(0%,rgb(67, 112, 210)), color-stop(99%,rgb(14, 14, 14)));        
+        }
 }
-*/
-
-
-

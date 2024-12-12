@@ -97,17 +97,8 @@
 	?>
 </section>
 
-<?php if($contador)  { ?>
-	<p class="contador"></i><?php echo('<i class="fa fa-search">:  </i>'. $contador); ?></p>
-<?php }?>
-
-<a style="bottom:80px;" href="#" class="scrollup"><i class="fa fa-chevron-circle-up"></i></a>
-<a style="bottom:40px;" onclick="window.history.back();" class="GoBack"><i class="fa fa-chevron-circle-left"></i></a>
-
-</br>
-
-<!---End Section-->
-<?php include __DIR__ . "/components/footer.php";?>
+<!--Bottom Bar-->
+<?php include __DIR__ . "/components/bottomBar.php";?>
 
 </body>
 	<script defer type="text/javascript" src="./assets/js/scroll.js"></script>
