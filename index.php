@@ -50,15 +50,18 @@
         <div class="button">
 		        <a href="#Buscar" class="btn"><i class="fa fa-search"></i> Empezar a buscar</a>
         </div>
+
     </section>
     
+<section style="padding-bottom:0px;padding-top:0;">
+<!-- MARQUEE COMPANYS-->
+    <?php include __DIR__ . "/components/marquee.php";?>
+</section>
+
     <!---AboutME Section-->
     <section class="about" id="about" style="padding-bottom:0;">
     
-    <center>
-            <!--<img class="levitar" src="assets/images/Info.png">--> 
-            <div class="pestañeo"></div>
-    </center>
+    <center><div class="pestañeo"></div></center>
     
         <div class="about-text">
             <h2><span>De</span>Nosotros<span>.</span></h2>
@@ -80,7 +83,7 @@
     <!---Catalogo Section-->
     <section class="services" id="Buscar" style="padding-bottom:0;">
             <div class="main-text">
-                <h2><span>Nuestro</span>Servicio<span>.</span></h2>
+                <h2 style="margin-top:30px;"><span>Nuestro</span>Servicio<span>.</span></h2>
                 <p><svg xmlns="" width="128" height="128" fill="currentColor" class="bi bi-pc-display" viewBox="0 0 16 16">
                 <path d="M8 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1zm1 13.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0m2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0M9.5 1a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1zM9 3.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0-.5.5M1.5 2A1.5 1.5 0 0 0 0 3.5v7A1.5 1.5 0 0 0 1.5 12H6v2h-.5a.5.5 0 0 0 0 1H7v-4H1.5a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7V2z"/>
                 </svg></p>
@@ -93,7 +96,7 @@
             <center>
                 <div class="detalles-content">
                 <p><center>
-                <div id="responsible">
+                <div id="responsible" >
                     <table>
                         <thead>
                             <tr>
@@ -114,11 +117,10 @@
             </center></p>
             </div>
 
-
             </center>
         </div>
         <div class="main-text">
-                 <h2><i class="fa fa-star" id="campana"></i> <span>Recomendados</span>.</h2>
+                 <h2 style="margin-top:100px;"><i class="fa fa-star" id="campana"></i> <span>Recomendados</span>.</h2>
         <h3 style="text-align:Justify;">
             <strong>Sumérgete</strong> en mundos llenos de aventuras y desafíos con nuestra selección de juegos recomendados. 
             Desde emocionantes batallas hasta historias cautivadoras, descubre títulos que te llevarán a vivir 
@@ -146,7 +148,7 @@
     <section class="ultimos" id="ultimos" style="padding-bottom:0;">
 
     <div class="main-text">
-       <h2><span>Los</span>Recientes<span>.</span></h2>
+       <h2 style="margin-top:30px;"><span>Los</span>Recientes<span>.</span></h2>
        <p><svg xmlns="" width="128" height="128" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
        <path d="M6.445 11.688V6.354h-.633A13 13 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23"/>
        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
