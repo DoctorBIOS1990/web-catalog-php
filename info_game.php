@@ -26,7 +26,7 @@
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <title>Info - <?php echo $videojuego->nombre?></title>
     <style>
-		.about{
+   		.about{
             background-image: linear-gradient(rgba(0,0,0,0.1), black ),url(../assets/images/BackGames.webp);
             align-items: normal;
         }
@@ -45,7 +45,7 @@
     </center>
            <div class="about-text">
 
-           <center ><h2><span id="special" class="span_name"><?php echo $videojuego->nombre?></span></h2>
+           <center><h2><span id="special" class="span_name"><?php echo $videojuego->nombre?></span></h2>
            <h4 id="DisponibleLetter" style="margin-bottom:0;" ><?php if ($videojuego->disponible){ 
                             echo '<i id="check" class="fa fa-check-circle"></i>';
                             echo " ¡Ya Disponible!";
@@ -127,16 +127,24 @@
             </div>
     </section>
 
+<div id="tooltip"></div>
+
+<?php $producto = $videojuego->nombre; 
+      $is_Stock = $videojuego->disponible; 
+      include __DIR__ . "/components/compra.php"; 
+?>
+
 <p class="bar" style="font-size:24px"></i> 
-	<a style="bottom:40px;" onclick="window.history.back();"><i class="fa fa-chevron-circle-left"></i></a>    
-    <a target="_blank" onclick="alertGame();" href="https://www.zona-leros.com/search?q=<?php echo str_replace(" ", "+",$videojuego->nombre);?>"><i class="fa fa-cloud-download fa-fw"></i></a>
-    <a target="_blank" onclick="alertGame();" href="https://compu-pc.com/?s=<?php echo str_replace(" ", "-",$videojuego->nombre);?>"><i class="fa fa-cloud-download fa-fw"></i></a>
-    <a target="_blank" onclick="alertGame();" href="https://www.google.com/search?q=Capturas+Juego+'<?php echo str_replace(" ", "+",$videojuego->nombre).' PC+Game&sa=X&sca_esv=63099308d1ada3ea&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgOGjTvRc9yFTaqV7WRdEZ5vrNCA3fjceDVxXTWs65gbgLeHpNqbEFY3HCfKsdJhnlUqy6J_VQgRbrDFeCKOFXy1EfpJySOxycAVvglFW3XgVnbAO4P3GC6K4q_tusskTx6UJLvlUuevDty122IWai3DySPD19FhEbU3MvupQHvkpYvbOU&ved=2ahUKEwjeg8jUwqeJAxU_TDABHVjTENMQtKgLegQIARAH&biw=1358&bih=628&dpr=1' ;?>"><i class="fa fa-camera fa-fw"></i></a>
-    <a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$videojuego->nombre).'+Game+Play' ;?>"><i class="fa fa-play fa-fw"></i></a>
-    <a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$videojuego->nombre).'+Trailer' ;?>"><i class="fa fa-play-circle fa-fw"></i></a>
-    <a style="bottom:80px;" href="#"><i class="fa fa-chevron-circle-up"></i></a>
+	<a style="bottom:40px;" onclick="window.history.back();"><i class="fa fa-arrow-circle-left" data-tooltip="Volver a la página anterior"></i></a>    
+    <a target="_blank" onclick="alertDownload('www.zona-leros.com');" href="https://www.zona-leros.com/search?q=<?php echo str_replace(" ", "+",$videojuego->nombre);?>"><i class="fa fa-cloud-download fa-fw" data-tooltip="Descargar desde Zona-Leros"></i></a>
+    <a target="_blank" onclick="alertDownload('Compu-PC.com');" href="https://compu-pc.com/?s=<?php echo str_replace(" ", "-",$videojuego->nombre);?>"><i class="fa fa-cloud-download fa-fw" data-tooltip="Descargar desde Compu-PC"></i></a>
+    <a target="_blank" onclick="alertGeneric('Capturas en Google.');" href="https://www.google.com/search?q=Capturas+Juego+'<?php echo str_replace(" ", "+",$videojuego->nombre).' PC+Game&sa=X&sca_esv=63099308d1ada3ea&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgOGjTvRc9yFTaqV7WRdEZ5vrNCA3fjceDVxXTWs65gbgLeHpNqbEFY3HCfKsdJhnlUqy6J_VQgRbrDFeCKOFXy1EfpJySOxycAVvglFW3XgVnbAO4P3GC6K4q_tusskTx6UJLvlUuevDty122IWai3DySPD19FhEbU3MvupQHvkpYvbOU&ved=2ahUKEwjeg8jUwqeJAxU_TDABHVjTENMQtKgLegQIARAH&biw=1358&bih=628&dpr=1' ;?>"><i class="fa fa-camera fa-fw" data-tooltip="Capturas en Google"></i></a>
+    <a target="_blank" onclick="alertGeneric('Ver Trailer desde Youtube.');" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$videojuego->nombre).'+Game+Play' ;?>"><i class="fa fa-play fa-fw" data-tooltip="Ver GamePlay en Youtube"></i></a>
+    <a target="_blank" onclick="alertGeneric('Ver GamePlay desde Youtube.');" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$videojuego->nombre).'+Trailer' ;?>"><i class="fa fa-play-circle fa-fw"data-tooltip="Ver Trailer en Youtube"></i></a>
+    <a style="bottom:80px;" href="#"><i class="fa fa-arrow-circle-up" data-tooltip="Subir al inicio de la página"></i></a>
 </p>
 
 </body>
-    <script type="text/javascript" src="./assets/js/script.js"></script>
+    <script src="./assets/js/tooltip.js"></script>
+    <script src="./assets/js/script.js"></script>
 </html>

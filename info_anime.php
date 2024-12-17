@@ -116,18 +116,23 @@
         </div>
     </section>
 
+<div id="tooltip"></div>
+<?php $producto = $anime->ani_nombre; 
+      $is_Stock = $anime->disponible; 
+      include __DIR__ . "/components/compra.php"; 
+?>
+
 <p class="bar" style="font-size:24px"></i> 
-	<a style="bottom:40px;" onclick="window.history.back();"><i class="fa fa-chevron-circle-left"></i></a>    
-
-    <a target="_blank" onclick="alertGame();" href="https://www.animeslatino.club/recherche?q=<?php echo str_replace(" ", "+",$anime->ani_nombre);?>"><i class="fa fa-cloud-download fa-fw"></i></a>
-    <a target="_blank" onclick="alertGame();" href="https://animedescargas.com/?s=<?php echo str_replace(" ", "+",$anime->ani_nombre). '&asl_active=1&p_asl_data=1&categoryset[]=8&categoryset[]=31&categoryset[]=32&categoryset[]=1&customset[]=post&asl_gen[]=excerpt&asl_gen[]=content&asl_gen[]=title&qtranslate_lang=0&filters_initial=1&filters_changed=0' ;?>"><i class="fa fa-cloud-download fa-fw"></i></a>
-    <a target="_blank" onclick="alertGame();" href="https://www.google.com/search?q=Capturas+Juego+'<?php echo str_replace(" ", "+",$anime->ani_nombre).' PC+Game&sa=X&sca_esv=63099308d1ada3ea&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgOGjTvRc9yFTaqV7WRdEZ5vrNCA3fjceDVxXTWs65gbgLeHpNqbEFY3HCfKsdJhnlUqy6J_VQgRbrDFeCKOFXy1EfpJySOxycAVvglFW3XgVnbAO4P3GC6K4q_tusskTx6UJLvlUuevDty122IWai3DySPD19FhEbU3MvupQHvkpYvbOU&ved=2ahUKEwjeg8jUwqeJAxU_TDABHVjTENMQtKgLegQIARAH&biw=1358&bih=628&dpr=1' ;?>"><i class="fa fa-camera fa-fw"></i></a>
-    <a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$anime->ani_nombre).'+Opening+Temporada+'.''.$anime->ani_temporada ;?>"><i class="fa fa-play fa-fw"></i></a>
-    <a target="_blank" onclick="alertGame();" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$anime->ani_nombre).'+Trailer' ;?>"><i class="fa fa-play-circle fa-fw"></i></a>
-
-    <a style="bottom:80px;" href="#"><i class="fa fa-chevron-circle-up"></i></a>
+	<a style="bottom:40px;" onclick="window.history.back();"><i class="fa fa-arrow-circle-left" data-tooltip="Volver a la página anterior"></i></a>    
+    <a target="_blank" onclick="alertDownload('www.animeslatino.club');" href="https://www.animeslatino.club/recherche?q=<?php echo str_replace(" ", "+",$anime->ani_nombre);?>"><i class="fa fa-cloud-download fa-fw" data-tooltip="Descargas en Anime Latino"></i></a>
+    <a target="_blank" onclick="alertDownload('animedescargas.com');" href="https://animedescargas.com/?s=<?php echo str_replace(" ", "+",$anime->ani_nombre). '&asl_active=1&p_asl_data=1&categoryset[]=8&categoryset[]=31&categoryset[]=32&categoryset[]=1&customset[]=post&asl_gen[]=excerpt&asl_gen[]=content&asl_gen[]=title&qtranslate_lang=0&filters_initial=1&filters_changed=0' ;?>"><i class="fa fa-cloud-download fa-fw" data-tooltip="Descargas en Anime Descargas"></i></a>
+    <a target="_blank" onclick="alertGeneric('Capturas en Google');" href="https://www.google.com/search?q=Capturas+Juego+'<?php echo str_replace(" ", "+",$anime->ani_nombre).' PC+Game&sa=X&sca_esv=63099308d1ada3ea&udm=2&fbs=AEQNm0CbCVgAZ5mWEJDg6aoPVcBgOGjTvRc9yFTaqV7WRdEZ5vrNCA3fjceDVxXTWs65gbgLeHpNqbEFY3HCfKsdJhnlUqy6J_VQgRbrDFeCKOFXy1EfpJySOxycAVvglFW3XgVnbAO4P3GC6K4q_tusskTx6UJLvlUuevDty122IWai3DySPD19FhEbU3MvupQHvkpYvbOU&ved=2ahUKEwjeg8jUwqeJAxU_TDABHVjTENMQtKgLegQIARAH&biw=1358&bih=628&dpr=1' ;?>"><i class="fa fa-camera fa-fw" data-tooltip="Capturas en Google"></i></a>
+    <a target="_blank" onclick="alertGeneric('Ver Opening en Youtube');" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$anime->ani_nombre).'+Opening+Temporada+'.''.$anime->ani_temporada ;?>"><i class="fa fa-play fa-fw" data-tooltip="Ver Opening en Youtube"></i></a>
+    <a target="_blank" onclick="alertGeneric('Ver Trailer en Youtube');" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$anime->ani_nombre).'+Trailer' ;?>"><i class="fa fa-play-circle fa-fw" data-tooltip="Ver Trailer en Youtube"></i></a>
+    <a style="bottom:80px;" href="#"><i class="fa fa-arrow-circle-up" data-tooltip="Subir al inicio de la página"></i></a>
 </p>
 
 </body>
-    <script type="text/javascript" src="./assets/js/script.js"></script>
+    <script src="./assets/js/tooltip.js"></script>
+    <script src="./assets/js/script.js"></script>
 </html>
