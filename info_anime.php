@@ -1,8 +1,7 @@
 <?php
     include_once __DIR__ . "/conexion.php";
-
     $consulta = new Consulta($baseAnime, NULL);
-    
+
     if ($_GET) {
         $sentencia = $consulta->listById("SELECT * FROM Animes WHERE ani_id = :id LIMIT 1;" , $_GET["id"]);
         $anime = $sentencia->fetch(PDO::FETCH_OBJ);
@@ -10,6 +9,20 @@
     else header("location:error.php");
 
 	if ($anime === false) {header("location:error.php"); exit;}
+  
+        switch(true){
+            case $anime->ani_capitulos > 1:
+                $medio =  '$ '. ($anime->ani_capitulos * 5). 'CUP';
+                break;
+
+            case $medio = 1:
+                $medio = '$ '. ($anime->ani_capitulos * 25). 'CUP';
+                break;
+
+            default:
+                $medio = "No existe capitulos.";
+                break;
+        }  
 ?>
 
 <!DOCTYPE html>
@@ -97,6 +110,19 @@
                             <td colspan="2"><center><?php echo $anime->ani_genero ?></center></td>
                             <td><center><?php echo $anime->ani_fecha ?></center></td>
                         </tbody>
+                        <thead>
+                            <?php if ($anime->disponible) {?>
+                                 <th colspan="3"><i class="fa fa-shopping-cart" style="color:white;"></i> ADQUIRIR</th>
+                            <?php } ?>
+                        </thead>
+                        <tbody>
+                             <?php if ($anime->disponible) {?>
+                                <td colspan="3">
+                                <?php $producto = $anime->ani_nombre;include __DIR__ . "/components/compra.php";
+                                echo '<center><strong>Saldo Completo:   </strong>'. $medio.'</center>';?>
+                                </td>
+                            <?php } ?>
+                        </tbody>
                     </table>
                 </div>
             </center></p>
@@ -114,13 +140,8 @@
                         ?>
                  </p>       
         </div>
+        <div id="tooltip"></div>
     </section>
-
-<div id="tooltip"></div>
-<?php $producto = $anime->ani_nombre; 
-      $is_Stock = $anime->disponible; 
-      include __DIR__ . "/components/compra.php"; 
-?>
 
 <p class="bar" style="font-size:24px"></i> 
 	<a style="bottom:40px;" onclick="window.history.back();"><i class="fa fa-arrow-circle-left" data-tooltip="Volver a la página anterior"></i></a>    
