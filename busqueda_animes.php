@@ -3,14 +3,14 @@
 	
 	$contador = 0;
 	$consultaAnime = new Consulta($baseAnime, 'ANIMES');
-	$recomendados = $consultaAnime->getAllRecords("SELECT * FROM ANIMES WHERE recomendado NOTNULL and ani_id > :id 
+	$recomendados = $consultaAnime->getAllRecords("SELECT ani_id, ani_img FROM ANIMES WHERE recomendado NOTNULL and ani_id > :id 
 							   		Order by ani_id LIMIT 8;");
 	$animes;
 
 	if ($_POST) {
 		
 		if (isset($_POST['nombre'])){
-			$animes = $consultaAnime->myQuery("SELECT * FROM ANIMES WHERE ani_nombre LIKE ?", "nombre");
+			$animes = $consultaAnime->myQuery("SELECT ani_id, ani_nombre, ani_img, disponible, recomendado, ani_capitulos, ani_temporada, ani_tamanio FROM ANIMES WHERE ani_nombre LIKE ?", "nombre");
 			$contador = count($animes);
 		}
 
@@ -18,7 +18,7 @@
 			if ($_POST['genero'] == '-- Listar todas --'){
 				$animes = $consultaAnime->fetchAllRecords("SELECT * FROM ANIMES");
 			}else{
-				$animes = $consultaAnime->myQuery("SELECT * FROM ANIMES WHERE ani_genero LIKE ?", "genero");
+				$animes = $consultaAnime->myQuery("SELECT ani_id, ani_nombre, ani_img, disponible, recomendado, ani_capitulos, ani_temporada, ani_tamanio, ani_genero FROM ANIMES WHERE ani_genero LIKE ?", "genero");
 			}
 			$contador = count($animes);
 		}
@@ -153,7 +153,7 @@
 				</div>
 			<?php }?>
 	</div>
-
+	<div id="tooltip"></div>
 </section>
 
 <!--Bottom Bar-->

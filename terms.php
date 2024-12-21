@@ -1,11 +1,3 @@
-<?php
-    $message = "";
-
-    if ($_GET["id"] == "404") {
-       $message = 'No se encuentra.';
-    }
-?>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

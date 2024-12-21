@@ -8,7 +8,7 @@
 	if ($_POST){
 		
 		if (isset($_POST['nombre'])){
-			$sentencia = $consulta->myQuery("SELECT * FROM PC WHERE nombre LIKE ?", "nombre");
+			$sentencia = $consulta->myQuery("SELECT id, nombre, disponible, recomendado, caratula, tamanio FROM PC WHERE nombre LIKE ?", "nombre");
 			$contador = count($sentencia);
 		}
 
@@ -16,7 +16,7 @@
 			if ($_POST['genero'] == '-- Listar todas --'){
 				$sentencia = $consulta->fetchAllRecords("SELECT * FROM PC");
 			}else{
-				$sentencia = $consulta->myQuery("SELECT * FROM PC WHERE genero LIKE ?", "genero");
+				$sentencia = $consulta->myQuery("SELECT id, nombre, disponible, recomendado, caratula, tamanio, genero FROM PC WHERE genero LIKE ?", "genero");
 			}
 			$contador = count($sentencia);
 		}
@@ -95,6 +95,7 @@
 		else if ($sentencia == false) echo '<style>#sectionSearch{background:none;}</style>
 		<div class="main-text"><h3 style="text-align:center;">"No se encuentra."</h3></div>'; 
 	?>
+	<div id="tooltip"></div>
 </section>
 
 <!--Bottom Bar-->

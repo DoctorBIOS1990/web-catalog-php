@@ -87,7 +87,6 @@
                                 <td><center><center><?php echo $videojuego->modo ?></center></center></td>
                             </tr>
                         </tbody>
-                        
                         <thead>
                             <th>GÉNERO</th>
                             <th>IDIOMA</th>
@@ -97,6 +96,18 @@
                             <td><center><?php echo $videojuego->genero ?></center></td>
                             <td><center><?php echo $videojuego->idioma ?></center></td>
                             <td><center><?php echo $videojuego->fecha ?></center></td>
+                        </tbody>
+                        <thead>
+                            <?php if ($videojuego->disponible) {?>
+                                 <th colspan="3"><i class="fa fa-shopping-cart" style="color:white;"></i> ADQUIRIR</th>
+                            <?php } ?>
+                        </thead>
+                        <tbody>
+                             <?php if ($videojuego->disponible) {?>
+                                <td colspan="3">
+                                <?php $producto = $videojuego->nombre;include __DIR__ . "/components/compra.php";?>
+                                </td>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -125,14 +136,8 @@
                             ?>
                     </p>         
             </div>
+            <div id="tooltip"></div>           
     </section>
-
-<div id="tooltip"></div>
-
-<?php $producto = $videojuego->nombre; 
-      $is_Stock = $videojuego->disponible; 
-      include __DIR__ . "/components/compra.php"; 
-?>
 
 <p class="bar" style="font-size:24px"></i> 
 	<a style="bottom:40px;" onclick="window.history.back();"><i class="fa fa-arrow-circle-left" data-tooltip="Volver a la página anterior"></i></a>    

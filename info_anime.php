@@ -118,8 +118,8 @@
                         <tbody>
                              <?php if ($anime->disponible) {?>
                                 <td colspan="3">
-                                <?php $producto = $anime->ani_nombre;include __DIR__ . "/components/compra.php";
-                                echo '<center><strong>Saldo Completo:   </strong>'. $medio.'</center>';?>
+                                <?php $producto = 'Anime: '. $anime->ani_nombre; include __DIR__ . "/components/compra.php";
+                                echo '<center style="padding-top:5px;"><strong>Saldo Completo:   </strong>'. $medio.'</center>';?>
                                 </td>
                             <?php } ?>
                         </tbody>
