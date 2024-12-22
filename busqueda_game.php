@@ -33,7 +33,9 @@
     <link rel="icon" type="image/png" href="assets/images/icon.png">
 	<link rel="stylesheet" href="assets/css/(style).css">
     <link rel="stylesheet" type="text/css" href="./assets/css/yui-3.14.css">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
 	<title>Búsqueda - <?php echo criterio(); ?></title>
 	<style>
 		.ultimos{
@@ -86,9 +88,10 @@
 				</p>
 			</center>
 			</div>
-			
 		<?php }?>
-	</div>
+
+	<!--Paginator-->
+	<?php include __DIR__ . "/components/paginator.php";?>	
 	<?php 
 		if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
 		<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 

@@ -80,16 +80,17 @@
 				</p>
 			</center>
 			</div>
-			
 		<?php }?>
-	</div>
+		
+	<!--Paginator-->
+	<?php include __DIR__ . "/components/paginator.php";?>	
 	<?php 
 		if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
 		<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 
 		else if ($sentencia == false) echo '<style>#sectionSearch{background:none;}</style>
 		<div class="main-text"><h3 style="text-align:center;">"No se encuentra."</h3></div>'; 
 	?>
-
+	<div id="tooltip"></div>
 </section>
 
 <!--Bottom Bar-->

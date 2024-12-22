@@ -1,31 +1,24 @@
 <?php
 	include_once __DIR__ . "/conexion.php";
-	
 	$contador = 0;
 	$consultaAnime = new Consulta($baseAnime, 'ANIMES');
 	$recomendados = $consultaAnime->getAllRecords("SELECT ani_id, ani_img FROM ANIMES WHERE recomendado NOTNULL and ani_id > :id 
 							   		Order by ani_id LIMIT 8;");
-	$animes;
+	$sentencia;
 
 	if ($_POST) {
-		
-		if (isset($_POST['nombre'])){
-			$animes = $consultaAnime->myQuery("SELECT ani_id, ani_nombre, ani_img, disponible, recomendado, ani_capitulos, ani_temporada, ani_tamanio FROM ANIMES WHERE ani_nombre LIKE ?", "nombre");
-			$contador = count($animes);
-		}
-
-		if (isset($_POST['genero'])){
-			if ($_POST['genero'] == '-- Listar todas --'){
-				$animes = $consultaAnime->fetchAllRecords("SELECT * FROM ANIMES");
-			}else{
-				$animes = $consultaAnime->myQuery("SELECT ani_id, ani_nombre, ani_img, disponible, recomendado, ani_capitulos, ani_temporada, ani_tamanio, ani_genero FROM ANIMES WHERE ani_genero LIKE ?", "genero");
-			}
-			$contador = count($animes);
-		}
+		if (isset($_POST['nombre']))
+			$sentencia = $consultaAnime->myQuery("SELECT ani_id, ani_nombre, ani_img, disponible, recomendado, ani_capitulos, ani_temporada, ani_tamanio FROM ANIMES 
+									  		   WHERE ani_nombre LIKE ?", "nombre");
+		if (isset($_POST['genero']))
+			if ($_POST['genero'] == '-- Listar todas --')
+				$sentencia = $consultaAnime->fetchAllRecords("SELECT * FROM ANIMES");
+			else
+				$sentencia = $consultaAnime->myQuery("SELECT ani_id, ani_nombre, ani_img, disponible, recomendado, ani_capitulos, ani_temporada, ani_tamanio, ani_genero FROM ANIMES
+						 WHERE ani_genero LIKE ?", "genero");
+		$contador = count($sentencia);
 	}
-
 	$estrenosAnimes = $consultaAnime->fetchAllRecords("SELECT * FROM ESTRENOS");
-
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +67,7 @@
 
 <section style="padding-top:0;padding-bottom:0;" class="portfolio" id="sectionSearch">
 	<div class="disponible-content">
-		<?php if ($_POST) foreach($animes as $anime){ ?>
+		<?php if ($_POST) foreach($sentencia as $anime){ ?>
 			<div class="rowDisponible"> 
 			<center>    
 				<a href="info_anime.php?id=<?php echo $anime->ani_id ?>">
@@ -97,11 +90,13 @@
 			</center>
 			</div>
 		<?php }?>
-	</div>
+
+	<!--Paginator-->
+	<?php include __DIR__ . "/components/paginator.php";?>	
 	<?php 
 		if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
 		<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 
-		else if ($animes == false) echo '<style>#sectionSearch{background:none;}</style>
+		else if ($sentencia == false) echo '<style>#sectionSearch{background:none;}</style>
 		<div class="main-text"><h3 style="text-align:center;">"No se encuentra."</h3></div>'; 
 	?>
 </section>
