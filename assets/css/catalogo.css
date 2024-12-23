@@ -1,5 +1,6 @@
 .services{
-    background-image: url(../images/Background.jpg);
+    background-image: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
+    linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/Background.webp);
     background-size: cover;
     background-position: center;
 }
