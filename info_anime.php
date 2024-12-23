@@ -42,7 +42,7 @@
             background-image: linear-gradient(rgba(0,0,0,0.1), black ),url(../assets/images/BackAnimes.webp);
             align-items: normal;
         }
-		.aboutObject{background-image: linear-gradient(to top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0), black ),url(../assets/images/Background.jpg);}        
+		.aboutObject{background-image: linear-gradient(to top, rgba(0,0,0,0.3), rgba(0, 0, 0, 0), black ),url(../assets/images/Background.webp);}        
 	</style>
 </head>
 
