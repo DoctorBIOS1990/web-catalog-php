@@ -4,16 +4,11 @@
 	$consultaAnime = new Consulta($baseAnime, 'ANIMES');
 
 	function getRecomendados($consultaAnime){
-		$aux = $consultaAnime->getAllRecords("SELECT ani_id, ani_img FROM ANIMES WHERE recomendado NOTNULL and ani_id > :id 
-						  			   		Order by ani_id LIMIT 8;");
-		if ($aux != null){
-			return $aux;
-		}
-		else getRecomendados($consultaAnime);
+		$aux =  $consultaAnime->getAllRecords("SELECT ani_id, ani_img FROM ANIMES WHERE recomendado NOTNULL and ani_id > :id Order by ani_id LIMIT 8;");
+		while (!$aux) $aux = getRecomendados($consultaAnime);
+		return $aux;
 	}
-
 	$recomendados = getRecomendados($consultaAnime);
-
 	$sentencia;
 
 	if ($_POST) {
