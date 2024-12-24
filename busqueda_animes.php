@@ -2,8 +2,18 @@
 	include_once __DIR__ . "/conexion.php";
 	$contador = 0;
 	$consultaAnime = new Consulta($baseAnime, 'ANIMES');
-	$recomendados = $consultaAnime->getAllRecords("SELECT ani_id, ani_img FROM ANIMES WHERE recomendado NOTNULL and ani_id > :id 
-							   		Order by ani_id LIMIT 8;");
+
+	function getRecomendados($consultaAnime){
+		$aux = $consultaAnime->getAllRecords("SELECT ani_id, ani_img FROM ANIMES WHERE recomendado NOTNULL and ani_id > :id 
+						  			   		Order by ani_id LIMIT 8;");
+		if ($aux != null){
+			return $aux;
+		}
+		else getRecomendados($consultaAnime);
+	}
+
+	$recomendados = getRecomendados($consultaAnime);
+
 	$sentencia;
 
 	if ($_POST) {
