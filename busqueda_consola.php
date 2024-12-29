@@ -3,7 +3,7 @@
 
 	$contador = 0;
 	$consulta = new Consulta($baseConsola, 'consolas');
-	$sentencia;
+	$sentencia= [];
 
 	if ($_POST){
 		
@@ -33,7 +33,7 @@
 	<title>Búsqueda - <?php echo criterio(); ?></title>
 	<style>
 		.ultimos{
-			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(../assets/images/BackConsoles.webp);
+			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(assets/images/BackConsoles.webp);
 			padding-bottom: 0;
 		}
 	</style>

@@ -1,28 +1,27 @@
 <?php
     include_once __DIR__ . "/conexion.php";
-    $consulta = new Consulta($baseAnime, NULL);
 
-    if ($_GET) {
-        $sentencia = $consulta->listById("SELECT * FROM Animes WHERE ani_id = :id LIMIT 1;" , $_GET["id"]);
-        $anime = $sentencia->fetch(PDO::FETCH_OBJ);
+    if (!isset($_GET["id"])) {
+        header("location:error.php");
+        exit;
     }
-    else header("location:error.php");
-
-	if ($anime === false) {header("location:error.php"); exit;}
-  
-        switch(true){
-            case $anime->ani_capitulos > 1:
-                $medio =  '$ '. ($anime->ani_capitulos * 5). 'CUP';
-                break;
-
-            case $medio = 1:
-                $medio = '$ '. ($anime->ani_capitulos * 25). 'CUP';
-                break;
-
-            default:
-                $medio = "No existe capitulos.";
-                break;
-        }  
+    
+    $consulta = new Consulta($baseAnime, NULL);
+    $sentencia = $consulta->listById("SELECT * FROM Animes WHERE ani_id = :id LIMIT 1;", $_GET["id"]);
+    $anime = $sentencia->fetch(PDO::FETCH_OBJ);
+    
+    if ($anime === false) {
+        header("location:error.php");
+        exit;
+    }
+    
+    if ($anime->ani_capitulos > 1) {
+        $medio = '$ ' . ($anime->ani_capitulos * 5) . ' CUP';
+    } else {
+        $medio = '$ ' . ($anime->ani_capitulos * 25) . ' CUP';
+    }
+    
+    echo $medio;
 ?>
 
 <!DOCTYPE html>
@@ -48,12 +47,12 @@
 
 <body>
 
-    <!-- Navigation -->
-    <?php include __DIR__ . "/components/header.php";?>
+<!-- Navigation -->
+<?php include __DIR__ . "/components/header.php";?>
     
-    <!---About this game Section-->
-    <section class="about" id="about" style="padding-bottom:0;">
-    
+<!---About this game Section-->
+<section class="about" id="about" style="padding-bottom:0;">
+
     <center>
          <img id="Cover" width="300" src="data:image/jpeg;base64,<?php echo base64_encode($anime->ani_img) ?>"/>
     </center>

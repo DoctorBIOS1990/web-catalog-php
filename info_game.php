@@ -1,16 +1,19 @@
 <?php
     include_once __DIR__ . "/conexion.php";
 
+    if (!isset($_GET["id"])) {
+        header("location:error.php");
+        exit;
+    }
+    
     $consulta = new Consulta($baseDeDatos, NULL);
-
-    if ($_GET) 
-        {
-            $sentencia = $consulta->listById( "SELECT * FROM PC WHERE id = :id LIMIT 1;" , $_GET["id"]);
-            $videojuego = $sentencia->fetch(PDO::FETCH_OBJ);
-        } 
-    else header("location:error.php");
-
-	if ($videojuego === false) {header("location:error.php");exit;}
+    $sentencia = $consulta->listById("SELECT * FROM PC WHERE id = :id LIMIT 1;", $_GET["id"]);
+    $videojuego = $sentencia->fetch(PDO::FETCH_OBJ);
+    
+    if ($videojuego === false) {
+        header("location:error.php");
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>

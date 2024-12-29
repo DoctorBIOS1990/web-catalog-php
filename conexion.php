@@ -14,19 +14,15 @@
 		switch(true){
 			case isset($_POST["nombre"]):
 				return $_POST['nombre'];
-				break;
 
 			case isset($_POST["genero"]):
 				return $_POST['genero'];
-				break;
 				
 			case isset($_POST["plataforma"]):
 				return $_POST['plataforma'];
-				break;	
 
 			default:
 				return "No existe.";
-				break;
 		}
 	}
 

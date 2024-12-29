@@ -3,7 +3,7 @@
 
 	$contador = 0;
 	$consulta = new Consulta($baseDeDatos, 'PC');
-	$sentencia;	
+	$sentencia = [];	
 
 	if ($_POST){
 		
@@ -39,7 +39,7 @@
 	<title>Búsqueda - <?php echo criterio(); ?></title>
 	<style>
 		.ultimos{
-			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(../assets/images/BackGames.webp);
+			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(assets/images/BackGames.webp);
 			padding-bottom: 0;
 		}
 	</style>
@@ -92,6 +92,7 @@
 
 	<!--Paginator-->
 	<?php include __DIR__ . "/components/paginator.php";?>	
+	
 	<?php 
 		if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
 		<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 

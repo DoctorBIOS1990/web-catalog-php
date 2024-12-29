@@ -11,7 +11,7 @@
 		return $aux;
 	}
 	$recomendados = getRecomendados($consultaAnime);
-	$sentencia;
+	$sentencia = [];
 
 	if ($_POST) {
 		if (isset($_POST['nombre']))
@@ -42,7 +42,7 @@
 	<title>Búsqueda - <?php echo criterio(); ?></title>
 	<style>
 		.ultimos{
-			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(../assets/images/BackAnimes.webp);
+			background-image: linear-gradient(rgba(0,0,0,0.3), black ),url(assets/images/BackAnimes.webp);
 			padding-bottom: 0;
 		}
 	</style>
