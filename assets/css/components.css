@@ -257,7 +257,7 @@ td{
 
 .cardContact{
     background: -webkit-gradient(linear, left top, left bottom, 
-    color-stop(0%,rgba(43, 48, 53)), color-stop(99%,rgb(14, 14, 14)));
+    color-stop(0%,rgba(43, 48, 53, 0.9)), color-stop(99%,rgb(14, 14, 14, 0.9)));
     width: 100%;
     padding:50px;
     border-radius: 6px;
@@ -276,6 +276,7 @@ td{
     color: #fff !important;
     justify-content: center;
 }
+
 .btnWhatsapp:Hover{
     cursor:pointer;
     transform: scale(1.1);
