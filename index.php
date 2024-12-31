@@ -195,12 +195,12 @@
 <section class="contact" id="contact">
     <div class="contact-text">
         <div class="cardContact">
-            <h2><span id="special">Contacta</span><strong>nos!</strong></h2> 
+        <h2><img id="contactLogo" src="assets/images/casco.png" alt="Logo"><span id="special">Contacta</span><strong>nos!</strong></h2> 
             <?php foreach($info as $CONTACTO){ ?>
-                <p><strong><i class="fa fa-map-marker"></i> Dirección:</strong> Calle E % 2 y 3 111 1/4 Reparto Vista Hermosa</p>
+                <p><strong><i class="fa fa-map-marker"></i> Dirección: </strong>Calle E % 2 y 3 111 1/4 Reparto Vista Hermosa.</p>
 
-                <p><strong><i class="fa fa-mobile-phone"></i> Movil:</strong> 53795328      
-                   <strong><i class="fa fa-phone-square"></i> Teléfono:</strong> 22695274 
+                <p><strong><i class="fa fa-mobile-phone"></i> Movil: </strong> 53795328      
+                   <strong><i class="fa fa-phone-square"></i> Teléfono: </strong> 22695274 
                 </p>
                                 
                 <p><i class="fa fa-clock-o"></i> <strong>Horario:</strong></br>
@@ -209,7 +209,7 @@
             <?php }?>
             <center>
             <div class="btnWhatsapp">
-                <a href="whatsapp://send?phone=+5353795328&text='Hola Juan Pablo.">
+                <a href="whatsapp://send?phone=+5353795328&text=Hola Juan Pablo.">
                    <p><i style="font-size:24px;" class="fa fa-whatsapp"></i>  Whatsapp</p>
                 </a>
             </div>  
@@ -219,7 +219,7 @@
 
     <div class="contact-text">
         <center>
-            <img width="300" src="data:image/jpeg;base64,<?php echo base64_encode($CONTACTO->MAPA) ?>"/>
+            <img id="mapa" width="300" src="data:image/jpeg;base64,<?php echo base64_encode($CONTACTO->MAPA) ?>"/>
         </center>
     </div>
 

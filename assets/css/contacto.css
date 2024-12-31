@@ -1,6 +1,4 @@
 .contact{
-    background-image: linear-gradient( to top, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ), 
-    linear-gradient(to bottom, rgba(0,0,0,0.1),rgba(0, 0, 0, 0), black ),url(../images/about.webp);
     background-size: contain;
     background-color: #202020;
     background-position: center;
@@ -13,6 +11,7 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
+    border-bottom: #ccc 1px solid;
 }
 
 .contact-text h4{
@@ -36,7 +35,7 @@
     margin-bottom: 30px;
 }
 
-.contact img{
+#mapa{
 	border: solid 3px #a6a5a5;
 	border-radius: 8px;
 	-webkit-box-shadow: 0px 0px 12px 0px rgba(0,0,0,0.75);
@@ -48,7 +47,7 @@
     transition: all .45s ease;
 }
 
-.contact img:Hover{
+#mapa:Hover{
     transform:scale(1.1);
 }
 
@@ -69,4 +68,38 @@
     gap: 1.0rem;
     text-align: left;
     overflow: auto;
+}
+
+.cardContact{
+    background: -webkit-gradient(linear, left top, left bottom, 
+    color-stop(0%,rgba(43, 48, 53, 0.9)), color-stop(99%,rgb(14, 14, 14, 0.9)));
+    width: 100%;
+    padding:50px;
+    border-radius: 6px;
+    border: #ccc 1px solid;
+}
+
+.btnWhatsapp{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #08958b;
+    border-radius: 5px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all .45s ease;
+    color: #fff !important;
+    justify-content: center;
+}
+
+.btnWhatsapp:Hover{
+    cursor:pointer;
+    transform: scale(1.1);
+}
+
+#contactLogo{
+    width:26px;
+    height:26px;
+    object-fit:contain;
+    margin-right: 10px; 
 }
