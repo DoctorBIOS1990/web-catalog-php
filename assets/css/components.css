@@ -248,8 +248,37 @@ td{
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
-    background-image: -webkit-gradient(linear, left top, left bottom, 
+    background-image: linear-gradient(to top, rgb(14, 14, 14), 
+    rgba(0, 0, 0, 0), rgba(43, 48, 53)), url(../images/BackGames.webp);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.9);
+ /*   background-image: -webkit-gradient(linear, left top, left bottom, 
+    color-stop(0%,rgba(43, 48, 53)), color-stop(99%,rgb(14, 14, 14)));*/
+}
+
+.cardContact{
+    background: -webkit-gradient(linear, left top, left bottom, 
     color-stop(0%,rgba(43, 48, 53)), color-stop(99%,rgb(14, 14, 14)));
+    width: 100%;
+    padding:50px;
+    border-radius: 6px;
+    border: #ccc 1px solid;
+}
+
+.btnWhatsapp{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #08958b;
+    border-radius: 5px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all .45s ease;
+    color: #fff !important;
+    justify-content: center;
+}
+.btnWhatsapp:Hover{
+    cursor:pointer;
+    transform: scale(1.1);
 }
 
 /* MARQUEE */
