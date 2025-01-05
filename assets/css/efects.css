@@ -62,12 +62,12 @@
 
 @keyframes transition_Contact 
 {
-    0% {background: url(../images/Gallery/0.webp);}
-    20% {background: url(../images/Gallery/1.webp);}
-    40% {background: url(../images/Gallery/2.webp);}
-    60% {background: url(../images/Gallery/3.webp);}
-    80% {background: url(../images/Gallery/4.webp);}
-    100% {background: url(../images/Gallery/0.webp);}
+    0% {background-size: cover;background-position: center; background: url(../images/Gallery/0.webp);}
+    20% {background-size: cover;background-position: center; background: url(../images/Gallery/1.webp);}
+    40% {background-size: cover;background-position: center; background: url(../images/Gallery/2.webp);}
+    60% {background-size: cover;background-position: center; background: url(../images/Gallery/3.webp);}
+    80% {background-size: cover;background-position: center; background: url(../images/Gallery/4.webp);}
+    100% {background-size: cover;background-position: center; background: url(../images/Gallery/0.webp);}
 }
 
 
