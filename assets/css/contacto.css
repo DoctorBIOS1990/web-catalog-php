@@ -1,5 +1,5 @@
 .contact{
-    background-size: contain;
+    background-size: cover;
     background-color: #202020;
     background-position: center;
     display: grid;
@@ -11,7 +11,6 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,.4);
-    border-bottom: #ccc 1px solid;
 }
 
 .contact-text h4{
@@ -74,7 +73,7 @@
     background: -webkit-gradient(linear, left top, left bottom, 
     color-stop(0%,rgba(43, 48, 53, 0.9)), color-stop(99%,rgb(14, 14, 14, 0.9)));
     width: 100%;
-    padding:50px;
+    padding:30px;
     border-radius: 6px;
     border: #ccc 1px solid;
 }
