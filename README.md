@@ -10,7 +10,7 @@ I removed records from the databases to reduce the size and make it easier on Gi
 :heavy_check_mark:<strong> Frontend: </strong> HTML5 | CSS | Javascript </br>
 :heavy_check_mark:<strong> Backend: </strong> PHP </br>
 :heavy_check_mark:<strong> Base Datos: </strong> Sqlite </br>
-:heavy_check_mark:<strong> Herramientas: </strong> DB Browser for Sqlite | Visual Studio Code </br>
+:heavy_check_mark:<strong> Herramientas: </strong> DB Browser for Sqlite | Visual Studio Code | Adobe Photoshop CC</br>
 
 <div align="center">
   <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/1.jpeg" width="150"/> 
