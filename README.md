@@ -6,6 +6,11 @@ The founder of the business is the main worker, he updates the databases, local 
 He lacks the staff to dedicate himself to work on the databases in the cloud, and the possibility of hiring them.
 I removed records from the databases to reduce the size and make it easier on GitHub.
 
+# Languajes | Tools
+:heavy_check_mark:<strong> Frontend: </strong> HTML5 | CSS | Javascript </br>
+:heavy_check_mark:<strong> Backend: </strong> PHP </br>
+:heavy_check_mark:<strong> Base Datos: </strong> Sqlite </br>
+:heavy_check_mark:<strong> Herramientas: </strong> DB Browser for Sqlite | Visual Studio Code </br>
 
 <div align="center">
   <img src="https://github.com/DoctorBIOS1990/web-catalog-php/blob/main/(ScreenShot)/1.jpeg" width="150"/> 
