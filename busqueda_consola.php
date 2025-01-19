@@ -40,9 +40,11 @@
 </head>
 <body>
 	
-<!---Navigator-->
+<!-- Navigator -->
 <?php include __DIR__ . "/components/header.php";?>
+<!-- End Navigator -->
 
+<!-- Home Search Juego -->
 <section class="ultimos" id="ultimos">
 	<div class="main-text">
 		<h2><i id="lupa" class="fa fa-search"></i><span id="special" class="span_name"> Consolas</span>.</h2>
@@ -58,7 +60,9 @@
 		</div>
 	</center>
 </section>
+<!--End Home Search Juego -->
 
+<!-- Cards Search Juegos-->
 <section style="padding-top:0;" class="portfolio" id="sectionSearch">
 	<div class="disponible-content">
 		<?php if ($_POST) foreach($sentencia as $busqueda){ ?>
@@ -82,8 +86,10 @@
 			</div>
 		<?php }?>
 		
-	<!--Paginator-->
+	<!-- Paginator -->
 	<?php include __DIR__ . "/components/paginator.php";?>	
+	<!-- End Paginator -->
+
 	<?php 
 		if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
 		<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 
@@ -92,6 +98,7 @@
 	?>
 	<div id="tooltip"></div>
 </section>
+<!-- End Cards Search Juegos-->
 
 <!--Bottom Bar-->
 <?php include __DIR__ . "/components/bottomBar.php";?>

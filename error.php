@@ -29,8 +29,11 @@
     </style>
 <body>
 
+<!-- Navigator bar -->
 <?php include __DIR__ . "/components/header.php";?>
+<!-- End Navigator bar -->
 
+<!-- Test Error 404 -->
 <section class="ultimos" id="ultimos">
     <div class="main-text">
         <center>
@@ -40,8 +43,12 @@
         </center>
     </div>
 </section>
+<!-- End Test Error 404 -->
 
+<!-- Footer Section -->
 <?php include __DIR__ . "/components/footer.php";?>
+<!-- End Footer Section -->
+
 </body>
     
 </html>

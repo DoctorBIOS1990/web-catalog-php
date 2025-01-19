@@ -33,9 +33,7 @@
     <link rel="icon" type="image/png" href="assets/images/icon.png">
 	<link rel="stylesheet" href="assets/css/(style).css">
     <link rel="stylesheet" type="text/css" href="./assets/css/yui-3.14.css">
-
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-
 	<title>Búsqueda - <?php echo criterio(); ?></title>
 	<style>
 		.ultimos{
@@ -46,9 +44,11 @@
 </head>
 <body>
 	
-<!---Navigator-->
+<!-- Navigator -->
 <?php include __DIR__ . "/components/header.php";?>
+<!-- End Navigator -->
 
+<!--Home Search Juego-->
 <section class="ultimos" id="ultimos">
 	<div class="main-text">
 		<h2><i id="lupa" class="fa fa-search"></i><span id="special" class="span_name"> Juegos PC</span>.</h2>
@@ -59,12 +59,15 @@
 
 	<center>
 		<div class="services-content">
-			<!--Search Form-->
+			<!--Search Juego Form-->
 			<?php include __DIR__ . "/components/form_game.php";?>
+			<!--End Search Juego Form-->
 		</div>
 	</center>
 </section>
+<!--End Home Search Juego -->
 
+<!--Cards Search Juegos-->
 <section style="padding-top:0;" class="portfolio" id="sectionSearch">
 	<div class="disponible-content">
 		<?php if ($_POST) foreach($sentencia as $busqueda){ ?>
@@ -90,22 +93,27 @@
 			</div>
 		<?php }?>
 
-	<!--Paginator-->
+	<!-- Paginator -->
 	<?php include __DIR__ . "/components/paginator.php";?>	
-	
+	<!-- End Paginator -->
+
 	<?php 
 		if (empty($_POST)) echo '<style>#sectionSearch{background:none;}</style>
 		<div class="main-text"><h3 style="text-align:center;">"No existen busquedas."</h3></div>'; 
 		else if ($sentencia == false) echo '<style>#sectionSearch{background:none;}</style>
 		<div class="main-text"><h3 style="text-align:center;">"No se encuentra."</h3></div>'; 
 	?>
+	<!-- Float tootip--> 
 	<div id="tooltip"></div>
 </section>
+<!-- End Cards Search Juegos-->
 
 <!--Bottom Bar-->
 <?php include __DIR__ . "/components/bottomBar.php";?>
+<!--End Bottom Bar-->
 
 </body>
+	<!-- Scripts -->
 	<script defer type="text/javascript" src="./assets/js/scroll.js"></script>
 	<script defer type="text/javascript" src="./assets/js/script.js"></script>
 	<script defer type="text/javascript" src="./assets/js/validate.js"></script>

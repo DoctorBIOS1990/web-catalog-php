@@ -49,9 +49,11 @@
 </head>
 <body>
 
-<!---Navigator-->
+<!-- Navigator -->
 <?php include __DIR__ . "/components/header.php";?>
+<!-- End Navigator -->
 
+<!--Home Search Anime -->
 <section class="ultimos" id="ultimos" style="padding-bottom:0;">
 	<div class="main-text">
 		<h2><i id="lupa" class="fa fa-search"></i><span id="special" class="span_name"> Animes</span>.</h2>
@@ -62,16 +64,15 @@
 
 	<center>
 		<div class="services-content">
-			<!--Search Form-->
+			<!--Search Anime Form-->
 			<?php include __DIR__ . "/components/form_anime.php";?>		
-	</div>			
-
-		</div>
+			<!--Search Anime Form-->
+		</div>			
 	</center>
-	
 </section>
+<!--End Home Search Anime -->
 
-<!---Portadas de Busquedas-->
+<!-- Cards Animes Busquedas-->
 <section style="padding-top:0;padding-bottom:0;" class="portfolio" id="sectionSearch">
 	<div class="disponible-content">
 		<?php if ($_POST) foreach($sentencia as $anime){ ?>
@@ -107,10 +108,10 @@
 		<div class="main-text"><h3 style="text-align:center;">"No se encuentra."</h3></div>'; 
 	?>
 </section>
+<!-- End Cards Animes Busquedas-->
 
-<!---ULTIMOS Section-->
+<!-- Ultimos Animes Section -->
 <section class="portfolio" id="portfolio" style="padding-bottom:0;">
-
     <div class="main-text">
        <h2 style="margin-top:30px;"><span>Los</span>Recientes<span>.</span></h2>
        <p><svg xmlns="" width="128" height="128" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
@@ -131,12 +132,13 @@
     </center>
     </div>
 </section>
+<!-- End Ultimos Animes Section-->
 
-<!---Recomendados Animes Section-->
+<!-- Recomendados Animes Section -->
 <section style="padding-top:0;padding-bottom:0;" class="portfolio">
 	<div class="main-text">
                  <h2><i class="fa fa-star" id="campana"></i> <span>Recomendados</span>.</h2>
-        <h3 style="text-align:Justify;">
+        <h3 style="text-align:center;padding: 0 5% 0 5%;">
 			<strong>¡Hola a todos los amantes del anime!</strong> Les traemos una recomendación que no querrán perderse. 
 			Prepárense para sumergirse en un viaje lleno de acción, emociones y personajes inolvidables. 
 			<strong>¡Comencemos!</strong>
@@ -157,8 +159,9 @@
         <button onclick="window.location.reload();" style="width:150px;"><i class="fa fa-refresh"></i> Recargar más...</button>
     </center>
 </section>
+<!-- End Recomendados Animes Section -->
 
-<!---Lanzamientos Animes Section-->
+<!---Lanzamientos Animes Section -->
 <section class="portfolio" id="lanzamientos" style="padding-top:0;">
 		<div class="main-text">
 		<h2><span>Lanza</span>mientos<span>.</span></h2>
@@ -181,11 +184,14 @@
 	</div>
 	<div id="tooltip"></div>
 </section>
+<!-- End Lanzamientos Animes Section -->
 
-<!--Bottom Bar-->
+<!-- Bottom Bar -->
 <?php include __DIR__ . "/components/bottomBar.php";?>
+<!-- End Bottom Bar -->
 
 </body>
+	<!--Scripts-->
 	<script defer type="text/javascript" src="./assets/js/scroll.js"></script>
 	<script defer type="text/javascript" src="./assets/js/script.js"></script>
 	<script defer type="text/javascript" src="./assets/js/validate.js"></script>

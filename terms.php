@@ -8,24 +8,17 @@
     <link rel="stylesheet" href="assets/css/(style).css">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="./assets/css/yui-3.14.css">
-
-    <style>
-        td, th{
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
-
+    <style>td, th{padding: 10px;text-align: center;}</style>
 </head>
  <body>
 
+<!-- Navigator bar -->
 <?php include __DIR__ . "/components/header.php";?>
+<!-- End Navigator bar -->
 
-   <!---AboutME Section-->
-   <section class="about" id="about">
-    
+<!---About Terms Section-->
+<section class="about" id="about">
     <center><img style="filter:sepia();" class="levitar" src="assets/images/1.png"></center>
-    
         <div class="about-text">
             <h2><span>Aclaraciones</span>.</h2>
             <h4><i class="fa fa-bullhorn" ></i> Nuestra política. </h4>
@@ -55,8 +48,12 @@
             
         </div>
     </section>  
+<!--End About Terms Section-->
 
+<!-- Footer Section -->
 <?php include __DIR__ . "/components/footer.php";?>
+<!-- End Footer Section -->
+
 </body>
     <script defer type="text/javascript" src="./assets/js/script.js"></script>         
 </html>

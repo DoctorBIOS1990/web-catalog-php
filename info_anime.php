@@ -49,10 +49,10 @@
 
 <!-- Navigation -->
 <?php include __DIR__ . "/components/header.php";?>
-    
-<!---About this game Section-->
-<section class="about" id="about" style="padding-bottom:0;">
+<!-- End Navigation -->
 
+<!-- About this anime Section -->
+<section class="about" id="about" style="padding-bottom:0;">
     <center>
          <img id="Cover" width="300" src="data:image/jpeg;base64,<?php echo base64_encode($anime->ani_img) ?>"/>
     </center>
@@ -66,7 +66,8 @@
                          ?>
                    </h4>
             </center>
-            
+
+            <!-- table -->
             <div class="detalles-content">
                 <p><center>
                 <div id="responsible">
@@ -126,8 +127,11 @@
                 </div>
             </center></p>
             </div>
+            <!-- End table -->
 </section>
+<!-- End About this anime Section -->
 
+<!-- Sinopsis Section-->   
 <section class="aboutObject" style="padding-top:0;">
     <div class="about-text">
              <h3 id="label"><B><br><i class="fa fa-book"></i> - SINOPSIS: <br></B></h3>
@@ -139,9 +143,12 @@
                         ?>
                  </p>       
         </div>
+        <!-- Float tootip-->   
         <div id="tooltip"></div>
-    </section>
+</section>
+<!-- Sinopsis Section-->   
 
+<!-- Personalize footer bar-->
 <p class="bar" style="font-size:24px"></i> 
 	<a style="bottom:40px;" onclick="window.history.back();"><i class="fa fa-arrow-circle-left" data-tooltip="Volver a la página anterior"></i></a>    
     <a target="_blank" onclick="alertDownload('www.animeslatino.club');" href="https://www.animeslatino.club/recherche?q=<?php echo str_replace(" ", "+",$anime->ani_nombre);?>"><i class="fa fa-cloud-download fa-fw" data-tooltip="Descargas en Anime Latino"></i></a>
@@ -151,6 +158,7 @@
     <a target="_blank" onclick="alertGeneric('Ver Trailer en Youtube');" href="https://www.youtube.com/results?search_query=<?php echo str_replace(" ", "+",$anime->ani_nombre).'+Trailer' ;?>"><i class="fa fa-play-circle fa-fw" data-tooltip="Ver Trailer en Youtube"></i></a>
     <a style="bottom:80px;" href="#"><i class="fa fa-arrow-circle-up" data-tooltip="Subir al inicio de la página"></i></a>
 </p>
+<!-- End Personalize footer bar-->
 
 </body>
     <script src="./assets/js/tooltip.js"></script>
