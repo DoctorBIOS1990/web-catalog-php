@@ -4,16 +4,17 @@
 	$contador = 0;
 	$consulta = new Consulta($baseConsola, 'consolas');
 	$sentencia= [];
+	$id = 0;
 
 	if ($_POST){
 		
 		if (isset($_POST['nombre'])){
-			$sentencia = $consulta->myQuery("SELECT * FROM consolas WHERE nombre LIKE ?", "nombre");
+			$sentencia = $consulta->myQuery("SELECT * FROM {$consulta->getTable()} WHERE nombre LIKE ?", "nombre");
 			$contador = count($sentencia);
 		}
 
 		if (isset($_POST['plataforma'])){
-			$sentencia = $consulta->myQuery("SELECT * FROM consolas WHERE plataforma LIKE ?", "plataforma");
+			$sentencia = $consulta->myQuery("SELECT * FROM {$consulta->getTable()} WHERE plataforma LIKE ?", "plataforma");
 			$contador = count($sentencia);
 		}
 	}

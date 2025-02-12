@@ -10,6 +10,11 @@ class Consulta {
 		$this->table = $nameTable;
 	}
     
+	// Obtener Tabla
+	public function getTable(){
+		return $this->table;
+	}
+	
 	// Todos los aleatorios
 	public function getAllRecords($SQLLine){
 		$sentencia = $this->listById($SQLLine , $this->getAleatorio() );

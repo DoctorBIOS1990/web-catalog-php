@@ -10,7 +10,7 @@
 ); 
 ?>  
 
-<form method="post" role="form" action="/busqueda_animes.php" id="searchAdvanced">
+<form method="post" role="form" action="busqueda_animes.php" id="searchAdvanced">
     <input required id="nombre" type="text" name="nombre" class="form-control" placeholder="Nombre de Anime..." autocomplete="on">
     <button><i class="fa fa-search"></i></button>
     </div>
@@ -19,7 +19,7 @@
 </br>
 
 <div class="form-group text-center" id="advancedPanel">
-    <form method="post" role="form" action="/busqueda_animes.php" >
+    <form method="post" role="form" action="busqueda_animes.php" >
        <strong>Busqueda de Categorias:</strong></br>
             <select id="genero" name="genero" required>
                 <option value="" selected disabled>Géneros</option>

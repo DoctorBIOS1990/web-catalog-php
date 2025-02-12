@@ -4,21 +4,29 @@
 	$contador = 0;
 	$consulta = new Consulta($baseDeDatos, 'PC');
 	$sentencia = [];	
+	$id = 0;
 
 	if ($_POST){
 		
 		if (isset($_POST['nombre'])){
-			$sentencia = $consulta->myQuery("SELECT id, nombre, disponible, recomendado, caratula, tamanio FROM PC WHERE nombre LIKE ?", "nombre");
+			$sentencia = $consulta->myQuery("SELECT id, nombre, disponible, recomendado, caratula, tamanio 
+								 			 FROM {$consulta->getTable()} WHERE nombre LIKE ?", "nombre");
 			$contador = count($sentencia);
 		}
 
 		if (isset($_POST['genero'])){
 			if ($_POST['genero'] == '-- Listar todas --'){
-				$sentencia = $consulta->fetchAllRecords("SELECT * FROM PC");
+				$sentencia = $consulta->fetchAllRecords("SELECT * FROM {$consulta->getTable()}");
 			}else{
-				$sentencia = $consulta->myQuery("SELECT id, nombre, disponible, recomendado, caratula, tamanio, genero FROM PC WHERE genero LIKE ?", "genero");
+				$sentencia = $consulta->myQuery("SELECT id, nombre, disponible, recomendado, caratula, tamanio, genero 
+												FROM {$consulta->getTable()} WHERE genero LIKE ?", "genero");
 			}
 			$contador = count($sentencia);
+		}
+	
+		if ($contador == 1) {
+			foreach ($sentencia as $s) $id = $s->id;
+			header('location:info_game.php?id='.$id);
 		}
 	}
 ?>

@@ -2,7 +2,7 @@
     $plataformas = array('PS2', 'PS3', 'PSP', 'WII', 'XBOX360'); 
 ?>  
 
-<form method="post" role="form" action="/busqueda_consola.php" id="searchAdvanced">
+<form method="post" role="form" action="busqueda_consola.php" id="searchAdvanced">
     <input required id="nombre" type="text" name="nombre" class="form-control" placeholder="Nombre de Juego..." autocomplete="on">
     <button><i class="fa fa-search"></i></button></br>
     </div>
@@ -11,7 +11,7 @@
 </br>
 
 <div class="form-group text-center" id="advancedPanel">
-    <form method="post" role="form" action="/busqueda_consola.php">
+    <form method="post" role="form" action="busqueda_consola.php">
        <strong>Seleccione una consola:</strong></br>
             <select id="genero" name="plataforma" required>
                 <option value="" selected disabled>Consolas</option>

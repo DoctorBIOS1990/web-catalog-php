@@ -2,11 +2,12 @@
 	include_once __DIR__ . "/conexion.php";
 	$contador = 0;
 	$consultaAnime = new Consulta($baseAnime, 'ANIMES');
+	$id = 0;
 
-	$ultimosALL = $consultaAnime->fetchAllRecords("SELECT ani_id, ani_img FROM ANIMES ORDER by ani_id DESC LIMIT 8");
+	$ultimosALL = $consultaAnime->fetchAllRecords("SELECT ani_id, ani_img FROM {$consultaAnime->getTable()} ORDER by ani_id DESC LIMIT 8");
 
 	function getRecomendados($consultaAnime){
-		$aux =  $consultaAnime->getAllRecords("SELECT ani_id, ani_img FROM ANIMES WHERE recomendado NOTNULL and ani_id > :id Order by ani_id LIMIT 8;");
+		$aux =  $consultaAnime->getAllRecords("SELECT ani_id, ani_img FROM {$consultaAnime->getTable()} WHERE recomendado NOTNULL and ani_id > :id Order by ani_id LIMIT 8;");
 		while (!$aux) $aux = getRecomendados($consultaAnime);
 		return $aux;
 	}
@@ -15,16 +16,25 @@
 
 	if ($_POST) {
 		if (isset($_POST['nombre']))
-			$sentencia = $consultaAnime->myQuery("SELECT ani_id, ani_nombre, ani_img, disponible, recomendado, ani_capitulos, ani_temporada, ani_tamanio FROM ANIMES 
-									  		   WHERE ani_nombre LIKE ?", "nombre");
+			$sentencia = $consultaAnime->myQuery("SELECT ani_id, ani_nombre, ani_img, disponible, recomendado, ani_capitulos, ani_temporada, ani_tamanio 
+									  			  FROM {$consultaAnime->getTable()}
+									  		      WHERE ani_nombre LIKE ?", "nombre");
+			$contador = count($sentencia);
+
 		if (isset($_POST['genero']))
 			if ($_POST['genero'] == '-- Listar todas --')
-				$sentencia = $consultaAnime->fetchAllRecords("SELECT * FROM ANIMES");
+				$sentencia = $consultaAnime->fetchAllRecords("SELECT * FROM {$consultaAnime->getTable()}");
 			else
-				$sentencia = $consultaAnime->myQuery("SELECT ani_id, ani_nombre, ani_img, disponible, recomendado, ani_capitulos, ani_temporada, ani_tamanio, ani_genero FROM ANIMES
-						 WHERE ani_genero LIKE ?", "genero");
+				$sentencia = $consultaAnime->myQuery("SELECT ani_id, ani_nombre, ani_img, disponible, recomendado, ani_capitulos, ani_temporada, ani_tamanio, ani_genero 
+													  FROM {$consultaAnime->getTable()} WHERE ani_genero LIKE ?", "genero");
 		$contador = count($sentencia);
 	}
+
+	if ($contador == 1) {
+		foreach ($sentencia as $s) $id = $s->ani_id;
+		header('location:info_anime.php?id='.$id);
+	}
+
 	$estrenosAnimes = $consultaAnime->fetchAllRecords("SELECT * FROM ESTRENOS");
 ?>
 
