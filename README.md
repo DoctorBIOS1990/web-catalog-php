@@ -8,7 +8,7 @@ I removed records from the databases to reduce the size and make it easier on Gi
 
 # Languajes | Tools
 :heavy_check_mark:<strong> Frontend: </strong> HTML5 | CSS | Javascript </br>
-:heavy_check_mark:<strong> Backend: </strong> PHP </br>
+:heavy_check_mark:<strong> Backend: </strong> PHP 8.1 </br>
 :heavy_check_mark:<strong> Base Datos: </strong> Sqlite </br>
 :heavy_check_mark:<strong> Herramientas: </strong> DB Browser for Sqlite | Visual Studio Code | Adobe Photoshop CC</br>
 
